@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">DesignInsurance</string>
+    <string name="album">البوم صور</string>
+    <string name="company_job">مهمة الشركة</string>
+    <string name="insurancePackage">حزم تأمينية</string>
+    <string name="about_us">من نحن</string>
+    <string name="emp">طلب توظيف</string>
+    <string name="call_us">اتصل بنا</string>
+    <string name="locations">الفروع</string>
+    <string name="emergency_numbers">أرقام الطوارئ</string>
+    <string name="help">مساعدة</string>
+    <string name="report">التبليغ عن مخالفات</string>
+    <string name="company_goals">أهداف الشركة</string>
+    <string name="special">ماذا يميزنا</string>
+
+
+</resources>
