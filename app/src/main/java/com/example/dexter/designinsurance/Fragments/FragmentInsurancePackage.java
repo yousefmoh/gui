@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,10 +18,22 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.dexter.designinsurance.Adapters.InsurancePackageAdapter;
-import com.example.dexter.designinsurance.Models.InsuranceModel;
+import com.example.dexter.designinsurance.Models.InsurancePackagesModel;
 import com.example.dexter.designinsurance.R;
+import com.example.dexter.designinsurance.Services.JSONResponse;
+import com.example.dexter.designinsurance.Services.RequestInterface;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by dexter on 3/31/2018.
@@ -31,7 +44,7 @@ public class FragmentInsurancePackage extends Fragment {
     RecyclerView recyclerView;
     InsurancePackageAdapter adapter;
     Context context;
-    ArrayList<InsuranceModel> data=new ArrayList<>();
+    ArrayList<InsurancePackagesModel> data=new ArrayList<>();
     Toolbar toolbar;
 
     @Override
@@ -48,7 +61,8 @@ public class FragmentInsurancePackage extends Fragment {
 
         setHasOptionsMenu(true);
         InitToolbar();
-        setRecycleView();
+        loadJSON();
+      //  setRecycleView();
         return view;
     }
 
@@ -76,25 +90,9 @@ public class FragmentInsurancePackage extends Fragment {
     }
 
     void setRecycleView(){
-        for (int i=0;i<10;i++){
-        InsuranceModel model=new InsuranceModel();
-        if (i==0) {
-            model.setName("تأمين حرائق");
-            model.setImageUrl("http://gui.ps/plugins/kcfinder/upload/plans/first-im.png");
-        }
-        else if( i==1){
-            model.setName("تأمين هندسية");
-            model.setImageUrl("http://gui.ps/plugins/kcfinder/upload/plans/third-im.png");
-        }
-        else {
-            model.setName("تأمين مركبات");
-            model.setImageUrl("http://gui.ps/plugins/kcfinder/upload/plans/four-im.png");
 
-        }
-        data.add(model);
-        }
 
-        adapter = new InsurancePackageAdapter(getActivity(),data);
+       adapter = new InsurancePackageAdapter(getActivity(),data);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
@@ -102,4 +100,57 @@ public class FragmentInsurancePackage extends Fragment {
 
 
     }
+
+    private void loadJSON( ){
+        //progressDialog.show(); // Display Progress Dialog
+
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://snap-project.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        final RequestInterface request = retrofit.create(RequestInterface.class);
+
+        Call<List<InsurancePackagesModel>> call = request.GetPackages();
+        call.enqueue(new Callback<List<InsurancePackagesModel>>() {
+            @Override
+            public void onResponse(Call<List<InsurancePackagesModel>> call, Response<List<InsurancePackagesModel>> response) {
+                List<InsurancePackagesModel> jsonResponse = response.body();
+                data = new ArrayList<>(jsonResponse);
+                setRecycleView();
+
+            }
+
+            @Override
+            public void onFailure(Call<List<InsurancePackagesModel>> call, Throwable t) {
+
+            }
+        });
+    /*    call.enqueue(new Callback<JSONResponse>() {
+            @Override
+            public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
+                JSONResponse jsonResponse = response.body();
+
+
+                data = new ArrayList<>(Arrays.asList(jsonResponse.getPackages()));
+
+                setRecycleView();
+               // adapter = new InsurancePackageAdapter(getActivity(),data);
+
+                //recyclerView.setAdapter(adapter);
+            }
+
+
+
+            @Override
+            public void onFailure(Call<JSONResponse> call, Throwable t) {
+                Toast.makeText(getActivity(),t.getMessage()+"",Toast.LENGTH_SHORT).show();
+
+                Log.d("Error",t.getMessage());
+            }
+        });
+*/
+
+    }
+
 }

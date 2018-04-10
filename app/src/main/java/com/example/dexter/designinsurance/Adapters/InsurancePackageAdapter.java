@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.dexter.designinsurance.Models.InsuranceModel;
+import com.example.dexter.designinsurance.Models.InsurancePackagesModel;
 import com.example.dexter.designinsurance.R;
 import com.squareup.picasso.Picasso;
 
@@ -20,9 +20,9 @@ import java.util.ArrayList;
 
 public class InsurancePackageAdapter extends RecyclerView.Adapter<InsurancePackageAdapter.ViewHolder> {
      private Context context;
-     private ArrayList<InsuranceModel> data;
+     private ArrayList<InsurancePackagesModel> data;
 
-    public InsurancePackageAdapter(Context context, ArrayList<InsuranceModel> data) {
+    public InsurancePackageAdapter(Context context, ArrayList<InsurancePackagesModel> data) {
         this.context = context;
         this.data = data;
     }

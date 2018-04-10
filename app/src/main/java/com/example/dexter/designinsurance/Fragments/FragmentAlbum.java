@@ -17,9 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.dexter.designinsurance.Adapters.AlbumAdapter;
-import com.example.dexter.designinsurance.Adapters.InsurancePackageAdapter;
 import com.example.dexter.designinsurance.Models.AlbumModel;
-import com.example.dexter.designinsurance.Models.InsuranceModel;
 import com.example.dexter.designinsurance.R;
 
 import java.util.ArrayList;
@@ -93,6 +91,7 @@ public class FragmentAlbum extends Fragment {
             model.setImageUrl("http://gui.ps/plugins/kcfinder/upload/albums/14_65.jpg");
 
         }
+
         data.add(model);
         }
 
