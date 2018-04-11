@@ -28,49 +28,15 @@
     android:layout_below="@+id/title"
     android:id="@+id/buttonslayout"
     android:layout_gravity="center"
-    android:gravity="center"
+    android:gravity="right"
     android:layout_marginTop="?attr/actionBarSize"
-    android:layout_marginRight="50dp"
-    android:layout_marginLeft="50dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
     tools:context="com.example.dexter.designinsurance.MainActivity">
-    <Button
-    android:layout_width="match_parent"
-    android:layout_gravity="center"
-    android:background="#9b1c56"
-    android:textColor="#ffffff"
-    android:text="@string/our_message"
-        android:id="@+id/ourmessageId"
+    <TextView
+        android:layout_width="wrap_content"
+        android:text=""
         android:layout_height="wrap_content" />
-    <Button
-    android:layout_width="match_parent"
-    android:layout_gravity="center"
-    android:background="#9b1c56"
-    android:textColor="#ffffff"
-    android:text="@string/our_vision"
-        android:id="@+id/ourvisionId"
-        android:layout_marginTop="10dp"
-    android:layout_height="wrap_content" />
-    <Button
-    android:layout_width="match_parent"
-    android:layout_gravity="center"
-    android:layout_marginTop="10dp"
-        android:id="@+id/ourshareholdersId"
-
-        android:textColor="#ffffff"
-    android:text="@string/our_mangment"
-    android:background="#9b1c56"
-    android:layout_height="wrap_content" />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:textColor="#ffffff"
-        android:id="@+id/aboutourcompanyId"
-
-        android:text="@string/aboutUs"
-        android:background="#9b1c56"
-        android:layout_height="wrap_content" />
-
 </LinearLayout>
 </RelativeLayout>
 </ScrollView>

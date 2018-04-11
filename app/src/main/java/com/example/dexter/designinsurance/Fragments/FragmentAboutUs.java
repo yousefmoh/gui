@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -20,10 +21,11 @@ import com.example.dexter.designinsurance.R;
  * Created by dexter on 3/31/2018.
  */
 
-public class FragmentAboutUs extends Fragment  {
+public class FragmentAboutUs extends Fragment  implements View.OnClickListener{
     View view;
     Fragment fragment;
     Toolbar toolbar;
+    Button OurMessageBtn,OurVisionBtn,AboutUsBtn,ShareHoldersBtn;
 
 
 
@@ -39,7 +41,48 @@ public class FragmentAboutUs extends Fragment  {
 
         view =inflater.inflate(R.layout.about_us_fragment, container, false);
         InitToolbar();
+        SetItems();
         return view;
+    }
+    public  void  SetItems()
+    {
+
+
+        OurMessageBtn=(Button) view.findViewById(R.id.ourmessageId);
+        OurVisionBtn=(Button) view.findViewById(R.id.ourvisionId);
+        AboutUsBtn=(Button) view.findViewById(R.id.aboutourcompanyId);
+        ShareHoldersBtn=(Button) view.findViewById(R.id.ourshareholdersId);
+        OurMessageBtn.setOnClickListener(this);
+        OurVisionBtn.setOnClickListener(this);
+        ShareHoldersBtn.setOnClickListener(this);
+        AboutUsBtn.setOnClickListener(this);
+    }
+
+    public void onClick(View v) {
+        // Perform action on click
+        switch(v.getId()) {
+            case R.id.ourmessageId:
+                fragment=new FragmentOurMessage();
+                break;
+            case R.id.aboutourcompanyId:
+                fragment=new FragmentAboutGlobal();
+                break;
+            case R.id.ourshareholdersId:
+                fragment=new FragmentMangmentShareholders();
+                break;
+                case R.id.ourvisionId:
+                fragment=new FragmentOurVision();
+                break;
+        }
+        OpenFragment();
+    }
+
+    public  void  OpenFragment()
+    {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
 

@@ -47,8 +47,8 @@
             android:layout_height="40dp"
             android:layout_marginBottom="5dp"
             android:layout_gravity="center"
-            android:scaleType="center"
-            android:src="@drawable/album_icon" />
+            android:scaleType="fitCenter"
+            android:src="@drawable/picture" />
             <TextView
                 android:layout_width="wrap_content"
                 android:text="@string/album"
@@ -78,8 +78,8 @@
                 android:layout_height="40dp"
                 android:layout_marginBottom="5dp"
                 android:layout_gravity="center"
-                android:scaleType="center"
-                android:src="@drawable/album_icon" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/car_insurance" />
             <TextView
                 android:layout_width="wrap_content"
                 android:text="@string/insurancePackage"
@@ -109,8 +109,8 @@
                 android:layout_height="40dp"
                 android:layout_marginBottom="5dp"
                 android:layout_gravity="center"
-                android:scaleType="center"
-                android:src="@drawable/album_icon" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/aboutfill" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -144,8 +144,8 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
-                android:scaleType="center"
-                android:src="@drawable/album_icon" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/place" />
             <TextView
                 android:layout_width="wrap_content"
                 android:text="@string/locations"
@@ -173,8 +173,8 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
-                android:scaleType="center"
-                android:src="@drawable/album_icon" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/post" />
             <TextView
                 android:layout_width="wrap_content"
                 android:text="@string/call_us"
@@ -201,8 +201,8 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
-                android:scaleType="center"
-                android:src="@drawable/album_icon" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/user_location" />
             <TextView
                 android:layout_width="wrap_content"
                 android:text="@string/emp"
@@ -234,9 +234,9 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:scaleType="center"
+                android:scaleType="fitCenter"
                 android:layout_marginBottom="5dp"
-                android:src="@drawable/album_icon" />
+                android:src="@drawable/feedback" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_marginTop="2dp"
@@ -263,9 +263,9 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:scaleType="center"
+                android:scaleType="fitCenter"
                 android:layout_marginBottom="5dp"
-                android:src="@drawable/album_icon" />
+                android:src="@drawable/help" />
             <TextView
                 android:layout_width="wrap_content"
                 android:text="@string/help"
@@ -292,7 +292,7 @@
                 android:layout_gravity="center"
                 android:scaleType="center"
                 android:layout_marginBottom="5dp"
-                android:src="@drawable/album_icon" />
+                android:src="@drawable/dail" />
             <TextView
                 android:layout_width="wrap_content"
                 android:text="@string/emergency_numbers"
