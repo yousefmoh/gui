@@ -11,22 +11,17 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dexter.designinsurance.R;
 
 /**
- * Created by dexter on 3/31/2018.
+ * Created by dexter on 4/13/2018.
  */
 
-public class FragmentAboutGlobal extends Fragment  {
+public class FragmentBoardsDirectors extends Fragment {
     View view;
-    Fragment fragment;
     Toolbar toolbar;
-    TextView titlebar;
-
-
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,22 +32,20 @@ public class FragmentAboutGlobal extends Fragment  {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-
-        view =inflater.inflate(R.layout.about_global_fragment, container, false);
+          view =inflater.inflate(R.layout.frg_mgmt_sh_boarddirectores, container, false);
         InitToolbar();
+
         return view;
     }
-
-
 
 
     public  void  InitToolbar()
     {
 
         toolbar=(Toolbar)view.findViewById(R.id.custom_toolbar) ;
-       // titlebar=(TextView)view.findViewById(R.id.titlebar);
-       // titlebar.setText("My title");
-       // toolbar.setTitle("aaaa");
+        // titlebar=(TextView)view.findViewById(R.id.titlebar);
+        // titlebar.setText("My title");
+        // toolbar.setTitle("aaaa");
 
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -60,10 +53,6 @@ public class FragmentAboutGlobal extends Fragment  {
         setHasOptionsMenu(true);
 
     }
-
-
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -76,7 +65,5 @@ public class FragmentAboutGlobal extends Fragment  {
                 return super.onOptionsItemSelected(item);
         }
     }
-
-
-
 }
+

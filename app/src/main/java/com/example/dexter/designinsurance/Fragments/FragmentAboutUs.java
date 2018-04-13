@@ -9,6 +9,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -40,6 +41,8 @@ public class FragmentAboutUs extends Fragment  implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
         view =inflater.inflate(R.layout.about_us_fragment, container, false);
+        fragment=new InformationFragment();
+
         InitToolbar();
         SetItems();
         return view;
@@ -58,7 +61,7 @@ public class FragmentAboutUs extends Fragment  implements View.OnClickListener{
         AboutUsBtn.setOnClickListener(this);
     }
 
-    public void onClick(View v) {
+   /* public void onClick(View v) {
         // Perform action on click
         switch(v.getId()) {
             case R.id.ourmessageId:
@@ -76,6 +79,31 @@ public class FragmentAboutUs extends Fragment  implements View.OnClickListener{
         }
         OpenFragment();
     }
+*/
+
+
+
+   public void onClick(View v) {
+        // Perform action on click
+        switch(v.getId()) {
+            case R.id.ourmessageId:
+                Flags.fragmentname="OurMessage";
+                break;
+
+            case R.id.ourvisionId:
+                Flags.fragmentname="OurVision";
+                break;
+            case R.id.aboutourcompanyId:
+                Flags.fragmentname="AboutGlobal";
+                break;
+            case R.id.ourshareholdersId:
+                fragment=new FragmentMangmentShareholders();
+                break;
+
+        }
+        OpenFragment();
+    }
+
 
     public  void  OpenFragment()
     {
@@ -97,6 +125,17 @@ public class FragmentAboutUs extends Fragment  implements View.OnClickListener{
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
         setHasOptionsMenu(true);
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Toast.makeText(getActivity(),"Back",Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 

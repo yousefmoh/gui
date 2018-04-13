@@ -20,11 +20,12 @@ import com.example.dexter.designinsurance.R;
  * Created by dexter on 3/31/2018.
  */
 
-public class FragmentOurMessage extends Fragment  {
+public class InformationFragment extends Fragment  {
     View view;
     Fragment fragment;
     Toolbar toolbar;
     TextView titlebar;
+    TextView content;
 
 
 
@@ -38,12 +39,29 @@ public class FragmentOurMessage extends Fragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
-        view =inflater.inflate(R.layout.our_message_fragment, container, false);
+        view =inflater.inflate(R.layout.information_fragment, container, false);
+        content=(TextView)view.findViewById((R.id.contentId));
         InitToolbar();
+        setContent();
         return view;
     }
 
 
+
+    public void setContent()
+     {   String FragmentName=Flags.fragmentname;
+         switch(FragmentName) {
+             case "OurMessage":
+                 content.setText(R.string.our_messagetext);
+                 break;
+                 case "OurVision":
+                 content.setText(R.string.our_vision_text);
+                 break;
+             case "AboutGlobal":
+                 content.setText(R.string.about_international);
+                 break;
+         }
+     }
 
 
     public  void  InitToolbar()

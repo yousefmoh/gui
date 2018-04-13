@@ -27,6 +27,7 @@
     android:background="#9b1c56"
     android:textColor="#ffffff"
     android:text="@string/mangment"
+    android:id="@+id/CompanyManagementId"
     android:layout_height="wrap_content" />
     <Button
     android:layout_width="match_parent"
@@ -34,13 +35,16 @@
     android:background="#9b1c56"
     android:textColor="#ffffff"
     android:text="@string/executive_management"
+    android:id="@+id/ExecutiveManagementId"
     android:layout_marginTop="10dp"
+
     android:layout_height="wrap_content" />
     <Button
     android:layout_width="match_parent"
     android:layout_gravity="center"
     android:layout_marginTop="10dp"
     android:textColor="#ffffff"
+        android:id="@+id/BoardofDirectorsId"
     android:text="@string/board_directors"
     android:background="#9b1c56"
     android:layout_height="wrap_content" />
@@ -48,6 +52,7 @@
         android:layout_width="match_parent"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
+        android:id="@+id/SeniorshareholdersId"
         android:textColor="#ffffff"
         android:text="@string/senior_shareholders"
         android:background="#9b1c56"
