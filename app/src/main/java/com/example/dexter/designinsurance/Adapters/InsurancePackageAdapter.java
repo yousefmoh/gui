@@ -1,6 +1,10 @@
 package com.example.dexter.designinsurance.Adapters;
 
+import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.dexter.designinsurance.Fragments.InsuranceInformationFragment;
 import com.example.dexter.designinsurance.Models.InsurancePackagesModel;
 import com.example.dexter.designinsurance.R;
 import com.squareup.picasso.Picasso;
@@ -21,6 +26,7 @@ import java.util.ArrayList;
 public class InsurancePackageAdapter extends RecyclerView.Adapter<InsurancePackageAdapter.ViewHolder> {
      private Context context;
      private ArrayList<InsurancePackagesModel> data;
+     private Fragment fragment;
 
     public InsurancePackageAdapter(Context context, ArrayList<InsurancePackagesModel> data) {
         this.context = context;
@@ -29,7 +35,7 @@ public class InsurancePackageAdapter extends RecyclerView.Adapter<InsurancePacka
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.album_card_row, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.insurance_card_row, parent, false);
         return new ViewHolder(view);
     }
 
@@ -37,6 +43,13 @@ public class InsurancePackageAdapter extends RecyclerView.Adapter<InsurancePacka
     public void onBindViewHolder(ViewHolder holder, int position) {
           holder.name.setText(data.get(position).getName());
           Picasso.with(context).load(data.get(position).getImageUrl()).into(holder.imageView);
+          holder.insurance_card_view.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+                fragment=new InsuranceInformationFragment();
+                  OpenFragment();
+              }
+          });
     }
 
 
@@ -46,15 +59,24 @@ public class InsurancePackageAdapter extends RecyclerView.Adapter<InsurancePacka
 
     }
 
+    public  void  OpenFragment()
+    {
+        FragmentTransaction transaction =  ((Activity) context).getFragmentManager().beginTransaction();
+        transaction.replace(R.id.container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 
     public class ViewHolder   extends RecyclerView.ViewHolder{
         TextView name;
         ImageView imageView;
+        CardView insurance_card_view;
 
         public ViewHolder(View view) {
 
             super(view);
             name=(TextView)view.findViewById(R.id.name);
+            insurance_card_view=(CardView)view.findViewById(R.id.insurance_card_view);
             imageView=(ImageView)view.findViewById(R.id.image);
 
 

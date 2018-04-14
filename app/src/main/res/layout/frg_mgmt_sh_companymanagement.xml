@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:weightSum="2"
-        android:layout_height="250dp">
+        android:layout_height="200dp">
 <LinearLayout
     android:layout_width="0dp"
     android:layout_weight="1"
@@ -41,11 +41,13 @@
         <ImageView
             android:layout_width="match_parent"
             android:src="@color/colorAccent"
-            android:layout_marginBottom="10dp"
-            android:layout_height="150dp" />
+            android:id="@+id/directorimgId1"
+            android:layout_marginBottom="2dp"
+            android:layout_height="100dp" />
     <TextView
         android:layout_width="match_parent"
         android:text="@string/album"
+        android:background="#9c0054"
         android:layout_height="50dp" />
     </LinearLayout>
         <LinearLayout
@@ -57,11 +59,13 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:src="@color/colorAccent"
-                android:layout_marginBottom="10dp"
-                android:layout_height="150dp" />
+                android:id="@+id/directorimgId2"
+                android:layout_marginBottom="2dp"
+                android:layout_height="100dp" />
             <TextView
                 android:layout_width="match_parent"
                 android:text="@string/album"
+                android:background="#9c0054"
                 android:layout_height="50dp" />
         </LinearLayout>
 
@@ -80,11 +84,13 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:src="@color/colorAccent"
-                android:layout_marginBottom="10dp"
-                android:layout_height="150dp" />
+                android:id="@+id/directorimgId4"
+                android:layout_marginBottom="2dp"
+                android:layout_height="100dp" />
             <TextView
                 android:layout_width="match_parent"
                 android:text="@string/album"
+                android:background="#9c0054"
                 android:layout_height="50dp" />
         </LinearLayout>
         <LinearLayout
@@ -96,11 +102,17 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:src="@color/colorAccent"
-                android:layout_marginBottom="10dp"
-                android:layout_height="150dp" />
+                android:id="@+id/directorimgId3"
+                android:layout_marginBottom="2dp"
+                android:layout_height="100dp" />
             <TextView
                 android:layout_width="match_parent"
-                android:text="@string/album"
+                android:gravity="center"
+                android:text="@string/jamal"
+                android:textSize="10sp"
+                android:textColor="#ffff"
+                android:layout_gravity="center"
+                android:background="#9c0054"
                 android:layout_height="50dp" />
         </LinearLayout>
 

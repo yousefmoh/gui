@@ -11,20 +11,24 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dexter.designinsurance.R;
-import com.squareup.picasso.Picasso;
 
 /**
- * Created by dexter on 4/13/2018.
+ * Created by dexter on 3/31/2018.
  */
 
-public class FragmentCompanyManagement extends Fragment {
+public class InsuranceInformationFragment extends Fragment  {
     View view;
+    Fragment fragment;
     Toolbar toolbar;
-    ImageView directorimgId1,directorimgId2,directorimgId3,directorimgId4;
+    TextView titlebar;
+    TextView content;
+
+
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,30 +38,36 @@ public class FragmentCompanyManagement extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-         view =inflater.inflate(R.layout.frg_mgmt_sh_companymanagement, container, false);
-        directorimgId1=(ImageView)view.findViewById(R.id.directorimgId1);
-        directorimgId2=(ImageView)view.findViewById(R.id.directorimgId2);
-        directorimgId3=(ImageView)view.findViewById(R.id.directorimgId3);
-        directorimgId4=(ImageView)view.findViewById(R.id.directorimgId4);
-        Picasso.with(getActivity()).load("http://gui.ps/plugins/kcfinder/upload/albums/x2.jpg").into(directorimgId1);
-        Picasso.with(getActivity()).load("http://gui.ps/plugins/kcfinder/upload/albums/x2.jpg").into(directorimgId2);
-        Picasso.with(getActivity()).load("http://gui.ps/plugins/kcfinder/upload/albums/x2.jpg").into(directorimgId3);
-        Picasso.with(getActivity()).load("http://gui.ps/plugins/kcfinder/upload/albums/x2.jpg").into(directorimgId4);
 
-
+        view =inflater.inflate(R.layout.insurance_information_fragment, container, false);
+      //  content=(TextView)view.findViewById((R.id.contentId));
         InitToolbar();
-
+       // setContent();
         return view;
     }
+
+
+
+    public void setContent()
+     {   String FragmentName=Flags.fragmentname;
+         switch(FragmentName) {
+             case "OurMessage":
+                 content.setText(R.string.our_messagetext);
+                 break;
+                 case "OurVision":
+                 content.setText(R.string.our_vision_text);
+                 break;
+             case "AboutGlobal":
+                 content.setText(R.string.about_international);
+                 break;
+         }
+     }
 
 
     public  void  InitToolbar()
     {
 
         toolbar=(Toolbar)view.findViewById(R.id.custom_toolbar) ;
-        // titlebar=(TextView)view.findViewById(R.id.titlebar);
-        // titlebar.setText("My title");
-        // toolbar.setTitle("aaaa");
 
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -65,6 +75,10 @@ public class FragmentCompanyManagement extends Fragment {
         setHasOptionsMenu(true);
 
     }
+
+
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -77,5 +91,7 @@ public class FragmentCompanyManagement extends Fragment {
                 return super.onOptionsItemSelected(item);
         }
     }
-}
 
+
+
+}

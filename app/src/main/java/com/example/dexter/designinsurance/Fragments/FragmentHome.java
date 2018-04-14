@@ -46,9 +46,11 @@ public class FragmentHome extends Fragment  implements View.OnClickListener {
         insurancePackage=(ImageView) view.findViewById(R.id.insurance_packageImg);
         aboutus=(ImageView) view.findViewById(R.id.aboutusImage);
         album=(ImageView) view.findViewById(R.id.albumImg);
+        help=(ImageView) view.findViewById(R.id.helpBtn);
         insurancePackage.setOnClickListener(this);
         aboutus.setOnClickListener(this);
         album.setOnClickListener(this);
+        help.setOnClickListener(this);
 
     }
 
@@ -64,6 +66,10 @@ public class FragmentHome extends Fragment  implements View.OnClickListener {
                 break;
                 case R.id.albumImg:
                 fragment=new FragmentAlbum();
+                break;
+
+                case R.id.helpBtn:
+                fragment=new FragmentHelp();
                 break;
         }
         OpenFragment();
