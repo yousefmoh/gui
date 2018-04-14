@@ -9,15 +9,12 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
 import com.example.dexter.designinsurance.Models.Images;
-import com.example.dexter.designinsurance.PicassoImageLoader;
-import com.example.dexter.designinsurance.R;
 import com.example.dexter.designinsurance.Services.RequestInterface;
 import com.veinhorn.scrollgalleryview.MediaInfo;
 import com.veinhorn.scrollgalleryview.ScrollGalleryView;
 
 import java.util.ArrayList;
 import java.util.List;
-import  com.example.dexter.designinsurance.Models.Images;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,7 +36,7 @@ public class GallaryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gallary_layout_fragment);
+        setContentView(R.layout.gallary_layout);
         loadJSON();
 
 

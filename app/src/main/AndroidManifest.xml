@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".VideoActivity"></activity>
         <activity android:name=".GallaryActivity"></activity>
+        <activity android:name=".InsuranceRequestActivity"></activity>
     </application>
 
 </manifest>

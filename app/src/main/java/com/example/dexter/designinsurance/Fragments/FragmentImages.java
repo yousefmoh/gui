@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -16,9 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.dexter.designinsurance.Adapters.AlbumAdapter;
-import com.example.dexter.designinsurance.Models.AlbumModel;
-import com.example.dexter.designinsurance.Models.AlbumModel;
 import com.example.dexter.designinsurance.Models.Images;
 import com.example.dexter.designinsurance.PicassoImageLoader;
 import com.example.dexter.designinsurance.R;
@@ -58,7 +53,7 @@ public class FragmentImages extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
-        view =inflater.inflate(R.layout.gallary_layout_fragment, container, false);
+        view =inflater.inflate(R.layout.gallary_layout, container, false);
 
         setHasOptionsMenu(true);
 

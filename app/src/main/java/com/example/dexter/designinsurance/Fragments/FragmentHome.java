@@ -2,6 +2,7 @@ package com.example.dexter.designinsurance.Fragments;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.dexter.designinsurance.GallaryActivity;
+import com.example.dexter.designinsurance.InsuranceRequestActivity;
 import com.example.dexter.designinsurance.R;
 
 /**
@@ -20,7 +23,7 @@ import com.example.dexter.designinsurance.R;
 
 public class FragmentHome extends Fragment  implements View.OnClickListener {
     View view;
-    ImageView aboutus,album,insurancePackage,callUs,emergancyNumbers,help,report,locations,emp;
+    ImageView aboutus,album,insurancePackage,callUs,emergancyNumbers,help,report,locations,insurancerequest;
     Fragment fragment;
 
 
@@ -47,10 +50,13 @@ public class FragmentHome extends Fragment  implements View.OnClickListener {
         aboutus=(ImageView) view.findViewById(R.id.aboutusImage);
         album=(ImageView) view.findViewById(R.id.albumImg);
         help=(ImageView) view.findViewById(R.id.helpBtn);
+        insurancerequest=(ImageView) view.findViewById(R.id.insurancerequestId);
+
         insurancePackage.setOnClickListener(this);
         aboutus.setOnClickListener(this);
         album.setOnClickListener(this);
         help.setOnClickListener(this);
+        insurancerequest.setOnClickListener(this);
 
     }
 
@@ -60,19 +66,27 @@ public class FragmentHome extends Fragment  implements View.OnClickListener {
         switch(v.getId()) {
             case R.id.insurance_packageImg:
                 fragment=new FragmentInsurancePackage();
+                OpenFragment();
                 break;
             case R.id.aboutusImage:
                 fragment=new FragmentAboutUs();
+                OpenFragment();
                 break;
                 case R.id.albumImg:
                 fragment=new FragmentAlbum();
+                    OpenFragment();
                 break;
 
                 case R.id.helpBtn:
                 fragment=new FragmentHelp();
+                    OpenFragment();
+                break;
+                case R.id.insurancerequestId:
+                    Intent intent = new Intent(getActivity(),InsuranceRequestActivity.class);
+                    startActivity(intent);
                 break;
         }
-        OpenFragment();
+        //OpenFragment();
     }
 
 
