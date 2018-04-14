@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import com.example.dexter.designinsurance.Fragments.InsuranceInformationFragment;
 import com.example.dexter.designinsurance.Models.InsurancePackagesModel;
 import com.example.dexter.designinsurance.R;
+import com.example.dexter.designinsurance.GallaryActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -46,7 +48,8 @@ public class InsurancePackageAdapter extends RecyclerView.Adapter<InsurancePacka
           holder.insurance_card_view.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View view) {
-                fragment=new InsuranceInformationFragment();
+
+                  fragment=new InsuranceInformationFragment();
                   OpenFragment();
               }
           });

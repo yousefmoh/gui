@@ -1,8 +1,8 @@
 package com.example.dexter.designinsurance.Services;
 
 
-import com.example.dexter.designinsurance.Models.AlbumModel;
-import com.example.dexter.designinsurance.Models.InsurancePackagesModel;
+import com.example.dexter.designinsurance.Models.SampleModel;
+import com.example.dexter.designinsurance.Models.SampleModel.albums;
 
 /**
  * Created by Dexter on 2/17/2018.
@@ -11,13 +11,13 @@ import com.example.dexter.designinsurance.Models.InsurancePackagesModel;
 public class JSONResponse {
 
 
-    private InsurancePackagesModel[] packages;
+private albums [] albums;
 
-    public InsurancePackagesModel[] getPackages() {
-        return packages;
+    public albums[] getAlbums() {
+        return albums;
     }
 
-    public void setPackages(InsurancePackagesModel[] packages) {
-        this.packages = packages;
+    public void setAlbums(albums[] albums) {
+        this.albums = albums;
     }
 }

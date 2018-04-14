@@ -19,9 +19,12 @@ import android.widget.Toast;
 import com.example.dexter.designinsurance.Adapters.AlbumAdapter;
 import com.example.dexter.designinsurance.Models.AlbumModel;
 import com.example.dexter.designinsurance.Models.AlbumModel;
+import com.example.dexter.designinsurance.Models.Images;
+import com.example.dexter.designinsurance.PicassoImageLoader;
 import com.example.dexter.designinsurance.R;
-import com.example.dexter.designinsurance.Services.JSONResponse;
 import com.example.dexter.designinsurance.Services.RequestInterface;
+import com.veinhorn.scrollgalleryview.MediaInfo;
+import com.veinhorn.scrollgalleryview.ScrollGalleryView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,13 +39,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by dexter on 3/31/2018.
  */
 
-public class FragmentAlbum extends Fragment {
+public class FragmentImages extends Fragment {
     View view;
-    RecyclerView recyclerView;
-    AlbumAdapter adapter;
     Context context;
-    ArrayList<AlbumModel> data=new ArrayList<>();
+    ArrayList<Images> data=new ArrayList<>();
     Toolbar toolbar;
+    List<MediaInfo> infos;
+    private ArrayList<String> Images;
+    private ScrollGalleryView scrollGalleryView;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,19 +58,21 @@ public class FragmentAlbum extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
-        view =inflater.inflate(R.layout.fragment_album, container, false);
+        view =inflater.inflate(R.layout.gallary_layout_fragment, container, false);
 
         setHasOptionsMenu(true);
-        InitToolbar();
-       // setRecycleView();
+
         loadJSON();
+        infos = new ArrayList<>(Images.size());//
+        for (String url : Images) infos.add(MediaInfo.mediaLoader(new PicassoImageLoader(url)));
         return view;
     }
 
 
+
+
     public  void InitToolbar()
     {
-        recyclerView=(RecyclerView)view.findViewById(R.id.album_recycler_view);
         toolbar=(Toolbar)view.findViewById(R.id.custom_toolbar) ;
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -86,16 +92,7 @@ public class FragmentAlbum extends Fragment {
         }
     }
 
-    void setRecycleView(){
 
-        adapter = new AlbumAdapter(getActivity(),data);
-        recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
-
-
-    }
 
     private void loadJSON( ){
         //progressDialog.show(); // Display Progress Dialog
@@ -107,18 +104,18 @@ public class FragmentAlbum extends Fragment {
                 .build();
         final RequestInterface request = retrofit.create(RequestInterface.class);
 
-       Call<List<AlbumModel>> call = request.GetAlbums();
-        call.enqueue(new Callback<List<AlbumModel>>() {
+       Call<List<Images>> call = request.getImages(1);
+        call.enqueue(new Callback<List<Images>>() {
             @Override
-            public void onResponse(Call<List<AlbumModel>> call, Response<List<AlbumModel>> response) {
-                List<AlbumModel> jsonResponse = response.body();
+            public void onResponse(Call<List<Images>> call, Response<List<Images>> response) {
+                List<Images> jsonResponse = response.body();
                 data = new ArrayList<>(jsonResponse);
-                setRecycleView();
+               // setRecycleView();
 
             }
 
             @Override
-            public void onFailure(Call<List<AlbumModel>> call, Throwable t) {
+            public void onFailure(Call<List<Images>> call, Throwable t) {
          //Toast.makeText(getActivity(),t.getMessage(),Toast.LENGTH_SHORT).show();
             }
         });

@@ -1,5 +1,7 @@
 package com.example.dexter.designinsurance.Services;
 
+import com.example.dexter.designinsurance.Models.AlbumModel;
+import com.example.dexter.designinsurance.Models.Images;
 import com.example.dexter.designinsurance.Models.InsurancePackagesModel;
 
 import java.util.List;
@@ -18,6 +20,18 @@ public interface RequestInterface {
 
     @GET("insuranceapis/packages.php")//http://snap-project.com/insuranceapis/packages.php
     Call<List<InsurancePackagesModel>> GetPackages() ;
+
+    @GET("insuranceapis/albums.php")//http://snap-project.com/insuranceapis/albums.php
+    Call<List<AlbumModel>> GetAlbums() ;
+
+
+
+    @GET("insuranceapis/imgablums.php")//http://snap-project.com/insuranceapis/albums.php
+
+    Call<JSONResponse> GetAlbumss();
+
+    @GET("/insuranceapis/images.php/{id}")//insuranceapis/images.php?id=1
+    Call<List<Images>> getImages(@Query("id") int id);
 
 
 
