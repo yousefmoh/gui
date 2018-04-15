@@ -41,16 +41,21 @@ public interface RequestInterface {
 
     @FormUrlEncoded
     @POST("/insuranceapis/insert.php")
-    Call<String> insertData( @Field("name") String name);
+    Call<String> insertData( @Field("name") String name,@Field("age") int age);
 
-   /* public string insertData(
-            @Field("name") String name,
-            Callback<Response> callback);
-*/
+
 
     @FormUrlEncoded
-    @POST("insuranceapis/insert.php")
-    Call<String> updateBook(@Field("name") String name);
+    @POST("/insuranceapis/insertuser.php")
+    Call<String> insertUser( @Field("username") String username,
+                             @Field("international_Id") String international_Id,
+                             @Field("mobilenumber") String mobilenumber,
+                             @Field("branchnumber") String branchnumber,
+                             @Field("insurancetype") String insurancetype,
+                             @Field("paymethod") String paymethod,
+                             @Field("accountnumber") String accountnumber);
+
+//username,international_Id, mobilenumber,branchnumber,insurancetype,paymethod,accountnumber
 
 
 

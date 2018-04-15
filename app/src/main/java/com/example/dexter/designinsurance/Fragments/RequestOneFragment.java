@@ -73,9 +73,17 @@ public class RequestOneFragment extends Fragment  {
         nextIdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // name.getText();
-              //  Toast.makeText(getActivity(),name.getText()+"",Toast.LENGTH_SHORT).show();
-                insertUser();
+                if (name.getText().toString().isEmpty()||numb.getText().toString().isEmpty()||Id.getText().toString().isEmpty())
+                {
+                      Toast.makeText(getActivity(),"Plase Make sure that you insert all data! Thanks ",Toast.LENGTH_SHORT).show();
+                      return;
+
+
+                }
+
+                PassData();
+
+
             }
         });
         /*oneText=(TextView)view.findViewById(R.id.oneText);
@@ -95,6 +103,19 @@ public class RequestOneFragment extends Fragment  {
         InitToolbar();
         return view;
     }
+    private void  PassData()
+    {
+        Bundle bundle=new Bundle();
+        bundle.putString("name", name.getText()+"");
+        bundle.putString("numb", numb.getText()+"");
+        bundle.putString("ID", Id.getText()+"");
+        fragment=new RequestTowFragment();
+        fragment.setArguments(bundle);
+        OpenFragment();
+    }
+
+
+
 
     private  String  insertUser()
     {
@@ -109,11 +130,12 @@ public class RequestOneFragment extends Fragment  {
                  .client(client)
                 .build();
         final RequestInterface request = retrofit.create(RequestInterface.class);
-        Call<String> call = request.insertData("aa");
+        Call<String> call = request.insertData("sdfsdfsdsdsdf",1);
                 call.enqueue(new Callback<String>() {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
                         Toast.makeText(getActivity(),response.body(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(),response+"",Toast.LENGTH_SHORT).show();
 
                     }
 
