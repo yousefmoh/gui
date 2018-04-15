@@ -1,6 +1,7 @@
 package com.example.dexter.designinsurance.Fragments;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -20,8 +21,15 @@ import com.example.dexter.designinsurance.R;
 import com.example.dexter.designinsurance.Services.RequestInterface;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.obsez.android.lib.filechooser.ChooserDialog;
 
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -39,8 +47,9 @@ public class RequestThreeFragment extends Fragment  {
     TextView titlebar;
     TextView content;
     Button nextIdBtn;
-
-
+    int flag=0;
+    String _path;
+    String FilePath="";
     String name,numb,Id,branchNumber,insuarnceType,accountNumber,payMethod;
 
     @Override
@@ -67,17 +76,80 @@ public class RequestThreeFragment extends Fragment  {
         nextIdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                insertUser();
+                //insertUser();
+               Toast.makeText(getActivity(),FilePath,Toast.LENGTH_SHORT).show();
+               if (flag==1)
 
+               {
+                   uploadfile(FilePath);
+                   return;
+               }
 
+                new ChooserDialog().with(getActivity())
+                        .withFilter(false, false, "jpg", "jpeg", "png")
+                        .withStartFile(_path)
+                        .withResources(R.string.title_choose, R.string.title_choose, R.string.dialog_cancel)
+                        .withChosenListener(new ChooserDialog.Result() {
+                            @Override
+                            public void onChoosePath(String path, File pathFile) {
+                               // uploadfile(path);
+                                flag=1;
+                                FilePath=path;
+                            }
+                        })
+                        .build()
+                        .show();
+               // Toast.makeText(getActivity(), "FILE: " + _path, Toast.LENGTH_SHORT).show();
+
+              //  uploadfile();
             }
         });
+
         Toast.makeText(getActivity(),name+numb+Id+branchNumber+insuarnceType+accountNumber+payMethod,Toast.LENGTH_SHORT).show();
 
         return view;
     }
 
 
+
+    private void  uploadfile(String path)
+    {
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
+        OkHttpClient client = new OkHttpClient();
+
+        Map<String, RequestBody> map = new HashMap<>();
+        File file = new File(path);
+        RequestBody requestBody = RequestBody.create(MediaType.parse("*/*"), file);
+        map.put("file\"; filename=\"" + file.getName() + "\"", requestBody);
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://snap-project.com/")
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .client(client)
+                .build();
+        final RequestInterface request = retrofit.create(RequestInterface.class);
+
+        Call<String> call = request.upload(map);
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                Toast.makeText(getActivity(), response.body()+"",Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Toast.makeText(getActivity(), t.getMessage()+"",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
+
+
+    }
 
 
 

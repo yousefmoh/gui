@@ -5,14 +5,18 @@ import com.example.dexter.designinsurance.Models.Images;
 import com.example.dexter.designinsurance.Models.InsurancePackagesModel;
 
 import java.util.List;
+import java.util.Map;
 
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.PartMap;
 import retrofit2.http.Query;
 
 /**
@@ -56,6 +60,13 @@ public interface RequestInterface {
                              @Field("accountnumber") String accountnumber);
 
 //username,international_Id, mobilenumber,branchnumber,insurancetype,paymethod,accountnumber
+
+
+    @Multipart
+    @POST("/insuranceapis/uploadfile.php")
+    Call<String> upload(
+            @PartMap Map<String, RequestBody> map
+    );
 
 
 
