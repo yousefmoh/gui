@@ -3,6 +3,7 @@ package com.example.dexter.designinsurance.Services;
 import com.example.dexter.designinsurance.Models.AlbumModel;
 import com.example.dexter.designinsurance.Models.Images;
 import com.example.dexter.designinsurance.Models.InsurancePackagesModel;
+import com.example.dexter.designinsurance.Models.ResponseModel;
 
 import java.util.List;
 import java.util.Map;
@@ -57,7 +58,11 @@ public interface RequestInterface {
                              @Field("branchnumber") String branchnumber,
                              @Field("insurancetype") String insurancetype,
                              @Field("paymethod") String paymethod,
-                             @Field("accountnumber") String accountnumber);
+                             @Field("accountnumber") String accountnumber,
+                             @Field("idpath") String Idpath,
+                             @Field("driveicencepath") String driveLicencePath
+
+    );
 
 //username,international_Id, mobilenumber,branchnumber,insurancetype,paymethod,accountnumber
 
@@ -65,6 +70,12 @@ public interface RequestInterface {
     @Multipart
     @POST("/insuranceapis/uploadfile.php")
     Call<String> upload(
+            @PartMap Map<String, RequestBody> map
+    );
+
+   @Multipart
+    @POST("/insuranceapis/uploadfile.php")
+    Call<ResponseModel> uploadFile(
             @PartMap Map<String, RequestBody> map
     );
 

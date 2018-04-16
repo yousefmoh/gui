@@ -10,15 +10,43 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:gravity="right"
+        android:orientation="vertical"
         android:layout_marginTop="70dp"
         android:layout_marginRight="20dp"
         android:layout_height="wrap_content">
-    <TextView
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="right"
+            android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="رخصة السياقة الفعالة "
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+    <Button
         android:layout_width="wrap_content"
-        android:text="Three"
-        android:gravity="right"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+        android:text="أرفع ملف "
+        android:id="@+id/drivelicenceId"
+        android:layout_height="wrap_content" /></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="right"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="صورة هوية الشخصية"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content" />
+            <Button
+                android:layout_width="wrap_content"
+                android:text="أرفع ملف  "
+                android:id="@+id/internationlIdFile"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
@@ -29,9 +57,9 @@
         android:layout_height="wrap_content">
         <Button
             android:layout_width="wrap_content"
-            android:text="التالي"
+            android:text="تأكيد طلب التأمين"
             android:gravity="center"
-            android:id="@+id/nextIdBtn"
+            android:id="@+id/confirminsurancerequestId"
             android:layout_gravity="center"
             android:layout_height="wrap_content" />
 

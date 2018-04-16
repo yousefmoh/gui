@@ -1,7 +1,10 @@
 package com.example.dexter.designinsurance.Fragments;
 
 import android.app.Fragment;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.location.Location;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,6 +20,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dexter.designinsurance.MainActivity;
+import com.example.dexter.designinsurance.Models.ResponseModel;
 import com.example.dexter.designinsurance.R;
 import com.example.dexter.designinsurance.Services.RequestInterface;
 import com.google.gson.Gson;
@@ -26,6 +31,7 @@ import com.obsez.android.lib.filechooser.ChooserDialog;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -45,12 +51,16 @@ public class RequestThreeFragment extends Fragment  {
     Fragment fragment;
     Toolbar toolbar;
     TextView titlebar;
+     String UserFilePath;
+    String randomIdFileName,randomDrivelicene,userIdPath,userDriveLPath;
     TextView content;
-    Button nextIdBtn;
+    Button confirminsurancerequestId,drivelicenceId,internationlIdFile;
     int flag=0;
-    String _path;
-    String FilePath="";
+    String _path,_path2;
+    String IdFilePath="";
+    String drivelicencePath="";
     String name,numb,Id,branchNumber,insuarnceType,accountNumber,payMethod;
+    ProgressDialog progressDialog;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -71,19 +81,15 @@ public class RequestThreeFragment extends Fragment  {
         insuarnceType=bundle.getString("insuarnceType");
         accountNumber=bundle.getString("accountNumber");
         payMethod=bundle.getString("payMethod");
-        nextIdBtn=(Button)view.findViewById(R.id.nextIdBtn);
+        confirminsurancerequestId=(Button)view.findViewById(R.id.confirminsurancerequestId);
+        drivelicenceId=(Button)view.findViewById(R.id.drivelicenceId);
+        internationlIdFile=(Button)view.findViewById(R.id.internationlIdFile);
+        progressDialog=new ProgressDialog(getActivity());
 
-        nextIdBtn.setOnClickListener(new View.OnClickListener() {
+        drivelicenceId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //insertUser();
-               Toast.makeText(getActivity(),FilePath,Toast.LENGTH_SHORT).show();
-               if (flag==1)
 
-               {
-                   uploadfile(FilePath);
-                   return;
-               }
 
                 new ChooserDialog().with(getActivity())
                         .withFilter(false, false, "jpg", "jpeg", "png")
@@ -92,27 +98,61 @@ public class RequestThreeFragment extends Fragment  {
                         .withChosenListener(new ChooserDialog.Result() {
                             @Override
                             public void onChoosePath(String path, File pathFile) {
-                               // uploadfile(path);
-                                flag=1;
-                                FilePath=path;
+
+                                drivelicencePath=path;
                             }
                         })
                         .build()
                         .show();
-               // Toast.makeText(getActivity(), "FILE: " + _path, Toast.LENGTH_SHORT).show();
 
-              //  uploadfile();
             }
         });
+        internationlIdFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new ChooserDialog().with(getActivity())
+                        .withFilter(false, false, "jpg", "jpeg", "png")
+                        .withStartFile(_path2)
+                        .withResources(R.string.title_choose, R.string.title_choose, R.string.dialog_cancel)
+                        .withChosenListener(new ChooserDialog.Result() {
+                            @Override
+                            public void onChoosePath(String path, File pathFile) {
 
-        Toast.makeText(getActivity(),name+numb+Id+branchNumber+insuarnceType+accountNumber+payMethod,Toast.LENGTH_SHORT).show();
+                                IdFilePath=path;
+                            }
+                        })
+                        .build()
+                        .show();
+
+            }
+        });
+        confirminsurancerequestId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(IdFilePath.isEmpty()||drivelicencePath.isEmpty()) {
+                    Toast.makeText(getActivity(),  "Please Choose  Files ", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                new AsyncTaskRunner().execute();
+               // new MyTask2().execute();
+
+             // new UploadDataTask1().execute();
+               //new AsyncTaskRunner().execute();
+                //Toast.makeText(getActivity(), userIdPath,Toast.LENGTH_SHORT).show();
+
+            // userIdPath   = uploadFile(IdFilePath,getRandomName());
+            // userDriveLPath   = uploadFile(drivelicencePath,getRandomName());
+            }
+        });
 
         return view;
     }
 
 
 
-    private void  uploadfile(String path)
+
+
+    private String  uploadFile(String path, final String Fname, final int Pflag)
     {
         Gson gson = new GsonBuilder()
                 .setLenient()
@@ -122,7 +162,10 @@ public class RequestThreeFragment extends Fragment  {
         Map<String, RequestBody> map = new HashMap<>();
         File file = new File(path);
         RequestBody requestBody = RequestBody.create(MediaType.parse("*/*"), file);
-        map.put("file\"; filename=\"" + file.getName() + "\"", requestBody);
+        final String extension = file.getName().split("\\.")[1];
+
+        // map.put("file\"; filename=\"" + file.getName() + "\"", requestBody);
+        map.put("file\"; filename=\"" + Fname+ "."+extension + "\"", requestBody);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://snap-project.com/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
@@ -130,31 +173,51 @@ public class RequestThreeFragment extends Fragment  {
                 .build();
         final RequestInterface request = retrofit.create(RequestInterface.class);
 
-        Call<String> call = request.upload(map);
-        call.enqueue(new Callback<String>() {
-            @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                Toast.makeText(getActivity(), response.body()+"",Toast.LENGTH_SHORT).show();
+        Call<ResponseModel> call = request.uploadFile(map);
+      call.enqueue(new Callback<ResponseModel>() {
+          @Override
+          public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+              ResponseModel responsem=response.body();
+              Toast.makeText(getActivity(), responsem.getMessage()+"",Toast.LENGTH_SHORT).show();
+              //Toast.makeText(getActivity(), responsem.getSuccess()+"",Toast.LENGTH_SHORT).show();
+                String result = "http://snap-project.com/insuranceapis/uploads/" + Fname + "." + extension;
+                  if (Pflag==0){
+                    userIdPath=result;
+                  }
+                  else
+                      userDriveLPath=result;
 
-            }
+          }
 
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-                Toast.makeText(getActivity(), t.getMessage()+"",Toast.LENGTH_SHORT).show();
+          @Override
+          public void onFailure(Call<ResponseModel> call, Throwable t) {
+              Toast.makeText(getActivity(), t.getMessage()+"",Toast.LENGTH_SHORT).show();
 
-            }
-        });
-
-
+          }
+      });
 
 
+return  "";
 
     }
 
 
+    protected String getRandomName() {
+        String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < 8) { // length of the random string.
+            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+            salt.append(SALTCHARS.charAt(index));
+        }
+        String saltStr = salt.toString();
+        return saltStr;
+
+    }
 
     private  void   insertUser()
     {
+        Toast.makeText(getActivity(),userIdPath+userDriveLPath,Toast.LENGTH_SHORT).show();
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -166,12 +229,15 @@ public class RequestThreeFragment extends Fragment  {
                 .client(client)
                 .build();
         final RequestInterface request = retrofit.create(RequestInterface.class);
-        Call<String> call = request.insertUser(name,Id,numb,branchNumber,insuarnceType,payMethod,accountNumber);
+        Call<String> call = request.insertUser(name,Id,numb,branchNumber,insuarnceType,payMethod,accountNumber,userIdPath,userDriveLPath);
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
-                Toast.makeText(getActivity(),response.body(),Toast.LENGTH_SHORT).show();
-                Toast.makeText(getActivity(),response+"",Toast.LENGTH_SHORT).show();
+            //    Toast.makeText(getActivity(),response.body(),Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getActivity(),response+"",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),userIdPath+"",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),userDriveLPath+"",Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
 
             }
 
@@ -228,4 +294,51 @@ public class RequestThreeFragment extends Fragment  {
 
 
 
+
+
+    private class AsyncTaskRunner extends AsyncTask<String, String, String> {
+
+        private String resp="";
+
+        @Override
+        protected String doInBackground(String... params) {
+            publishProgress("Sleeping..."); // Calls onProgressUpdate()
+            try {
+                uploadFile(IdFilePath,getRandomName(),0);
+                uploadFile(drivelicencePath,getRandomName(),1);
+                int time = Integer.parseInt("10000");
+                Thread.sleep(time);
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                resp = e.getMessage();
+            } catch (Exception e) {
+                e.printStackTrace();
+                resp = e.getMessage();
+            }
+            return resp;
+        }
+
+
+        @Override
+        protected void onPostExecute(String result) {
+          //  Toast.makeText(getActivity(),userIdPath+"",Toast.LENGTH_SHORT).show();
+           // Toast.makeText(getActivity(),userDriveLPath+"",Toast.LENGTH_SHORT).show();
+         //  progressDialog.dismiss();
+           insertUser();
+        }
+
+
+        @Override
+        protected void onPreExecute() {
+            progressDialog = ProgressDialog.show(getActivity(),
+                    "ProgressDialog",
+                    "Wait Please");
+        }
+    }
+
+
+
+
 }
+
