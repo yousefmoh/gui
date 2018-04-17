@@ -23,7 +23,7 @@ import com.example.dexter.designinsurance.R;
 
 public class FragmentHome extends Fragment  implements View.OnClickListener {
     View view;
-    ImageView aboutus,album,insurancePackage,callUs,emergancyNumbers,help,report,locations,insurancerequest;
+    ImageView aboutus,album,insurancePackage,contact_us,emergancyNumbers,help,report,locations,insurancerequest;
     Fragment fragment;
 
 
@@ -51,12 +51,17 @@ public class FragmentHome extends Fragment  implements View.OnClickListener {
         album=(ImageView) view.findViewById(R.id.albumImg);
         help=(ImageView) view.findViewById(R.id.helpBtn);
         insurancerequest=(ImageView) view.findViewById(R.id.insurancerequestId);
+        contact_us=(ImageView) view.findViewById(R.id.contact_usId);
+        report=(ImageView) view.findViewById(R.id.repoortId);
+
 
         insurancePackage.setOnClickListener(this);
+        contact_us.setOnClickListener(this);
         aboutus.setOnClickListener(this);
         album.setOnClickListener(this);
         help.setOnClickListener(this);
         insurancerequest.setOnClickListener(this);
+        report.setOnClickListener(this);
 
     }
 
@@ -76,10 +81,18 @@ public class FragmentHome extends Fragment  implements View.OnClickListener {
                 fragment=new FragmentAlbum();
                     OpenFragment();
                 break;
+           case R.id.contact_usId:
+                fragment=new ContactUsFragment();
+                    OpenFragment();
+                break;
 
                 case R.id.helpBtn:
                 fragment=new FragmentHelp();
                     OpenFragment();
+                break;
+            case R.id.repoortId:
+                fragment=new ReportFragment();
+                OpenFragment();
                 break;
                 case R.id.insurancerequestId:
                     Intent intent = new Intent(getActivity(),InsuranceRequestActivity.class);

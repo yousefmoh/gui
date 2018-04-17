@@ -165,6 +165,7 @@
                 android:layout_width="70dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
+                android:id="@+id/contact_usId"
                 android:layout_height="70dp"
                 android:src="#9b1d54"/>
 
@@ -177,7 +178,7 @@
                 android:src="@drawable/post" />
             <TextView
                 android:layout_width="wrap_content"
-                android:text="@string/call_us"
+                android:text="تواصل معنا"
                 android:layout_marginTop="2dp"
                 android:layout_gravity="center|bottom"
                 android:layout_height="wrap_content" />
@@ -228,6 +229,7 @@
                 android:layout_width="70dp"
                 android:layout_gravity="center"
                 android:layout_height="70dp"
+                android:id="@+id/repoortId"
                 android:layout_marginBottom="5dp"
                 android:src="#9b1d54"/>
 

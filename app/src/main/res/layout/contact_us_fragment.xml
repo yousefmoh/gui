@@ -13,7 +13,7 @@
         android:layout_marginTop="?attr/actionBarSize"
         android:textColor="#252424"
         android:id="@+id/title"
-        android:text="@string/about_us"
+        android:text="تواصل معنا"
         android:layout_height="wrap_content" />
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -34,32 +34,18 @@
     android:layout_gravity="center"
     android:background="#9b1c56"
     android:textColor="#ffffff"
-    android:text="@string/our_message"
+    android:text="اتصل بنا "
+    android:id="@+id/callusId"
     android:layout_height="wrap_content" />
     <Button
     android:layout_width="match_parent"
     android:layout_gravity="center"
     android:background="#9b1c56"
     android:textColor="#ffffff"
-    android:text="@string/our_vision"
+        android:id="@+id/emergancyId"
+    android:text="معلومات الطوارئ"
     android:layout_marginTop="10dp"
     android:layout_height="wrap_content" />
-    <Button
-    android:layout_width="match_parent"
-    android:layout_gravity="center"
-    android:layout_marginTop="10dp"
-    android:textColor="#ffffff"
-    android:text="@string/our_mangment"
-    android:background="#9b1c56"
-    android:layout_height="wrap_content" />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:textColor="#ffffff"
-        android:text="@string/aboutUs"
-        android:background="#9b1c56"
-        android:layout_height="wrap_content" />
 
 </LinearLayout>
 </RelativeLayout>
