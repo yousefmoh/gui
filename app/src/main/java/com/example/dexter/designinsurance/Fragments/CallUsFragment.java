@@ -1,6 +1,7 @@
 package com.example.dexter.designinsurance.Fragments;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -27,6 +28,7 @@ public class CallUsFragment extends Fragment  {
     Toolbar toolbar;
     TextView titlebar;
     TextView content;
+    Button sendEmailBtn;
 
 
 
@@ -43,6 +45,14 @@ public class CallUsFragment extends Fragment  {
 
         view =inflater.inflate(R.layout.callus_fragment, container, false);
         InitToolbar();
+        sendEmailBtn=(Button)view.findViewById(R.id.sendEmailBtn);
+        sendEmailBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SendEmail();
+
+            }
+        });
         return view;
     }
 
@@ -68,6 +78,23 @@ public class CallUsFragment extends Fragment  {
 
 
 
+    private  void  SendEmail ()
+    {
+
+        Intent i = new Intent(Intent.ACTION_SEND);
+        i.setType("message/rfc822");
+        i.putExtra(Intent.EXTRA_EMAIL  , "test@gmail.com");
+        i.putExtra(Intent.EXTRA_CC , "cc");
+        i.putExtra(Intent.EXTRA_BCC , "");
+        i.putExtra(Intent.EXTRA_SUBJECT, "subject");
+        i.putExtra(Intent.EXTRA_TEXT   , "extra");
+        try {
+            startActivity(Intent.createChooser(i, "Send mail..."));
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(getActivity(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+        }
+
+    }
 
 
     @Override
