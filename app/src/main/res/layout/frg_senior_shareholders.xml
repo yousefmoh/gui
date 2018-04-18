@@ -73,7 +73,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="عدد الأسهم 722.139 بنسبة %13.13"
+            android:text="عدد الأسهم 550.000 بنسبة %10.00"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
@@ -90,7 +90,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="عدد الأسهم 500.000 بنسبة %10.00"
+            android:text="عدد الأسهم 412.500 بنسبة %7.50"
             android:layout_height="wrap_content" />
     </LinearLayout>
      <LinearLayout
@@ -106,7 +106,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="عدد الأسهم 722.139 بنسبة %13.13"
+            android:text="عدد الأسهم 412.500 بنسبة %7.50"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
@@ -123,7 +123,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="عدد الأسهم 500.000 بنسبة %10.00"
+            android:text="عدد الأسهم 412.500 بنسبة %7.50"
             android:layout_height="wrap_content" />
     </LinearLayout>
      <LinearLayout
@@ -139,7 +139,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="عدد الأسهم 722.139 بنسبة %13.13"
+            android:text="عدد الأسهم 385.000 بنسبة %7.00"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
@@ -156,7 +156,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="عدد الأسهم 500.000 بنسبة %10.00"
+            android:text="عدد الأسهم 220.000 بنسبة %4.00"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
@@ -173,7 +173,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="عدد الأسهم 722.139 بنسبة %13.13"
+            android:text="عدد الأسهم 110.000 بنسبة %2.00"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
@@ -190,7 +190,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="عدد الأسهم 500.000 بنسبة %10.00"
+            android:text="عدد الأسهم 110.000 بنسبة %2.00"
             android:layout_height="wrap_content" />
     </LinearLayout>  <LinearLayout
         android:layout_width="match_parent"
@@ -205,7 +205,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="عدد الأسهم 722.139 بنسبة %13.13"
+            android:text="عدد الأسهم 110.000 بنسبة %2.00"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
@@ -222,7 +222,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="عدد الأسهم 500.000 بنسبة %10.00"
+            android:text="عدد الأسهم 110.000 بنسبة %2.00"
             android:layout_height="wrap_content" />
     </LinearLayout>
 

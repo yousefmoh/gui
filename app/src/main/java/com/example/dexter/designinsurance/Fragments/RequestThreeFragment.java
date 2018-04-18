@@ -285,7 +285,9 @@ return  "";
 
         switch (item.getItemId()) {
             case android.R.id.home:
-                Toast.makeText(getActivity(),"Back",Toast.LENGTH_SHORT).show();
+                getFragmentManager().popBackStack();
+
+                //  Toast.makeText(getActivity(),"Back",Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

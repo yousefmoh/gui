@@ -47,6 +47,22 @@
         android:id="@+id/insuranceInfo"
         android:text="@string/insuranceEngInfo"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/insurance_thirdparty"
+        android:layout_height="wrap_content" />
+
+       <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/full_insurance"
+        android:layout_height="wrap_content" />
+
+
+
+
 </LinearLayout>
 </RelativeLayout>
 </ScrollView>

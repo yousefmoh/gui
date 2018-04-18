@@ -37,5 +37,10 @@ public class InsuranceRequestActivity extends AppCompatActivity {
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount()==1)
+            finish();
+        super.onBackPressed();
+    }
 }

@@ -74,7 +74,9 @@ public class CommonQuestionsFragment extends Fragment  {
 
         switch (item.getItemId()) {
             case android.R.id.home:
-                Toast.makeText(getActivity(),"Back",Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(getActivity(),"Back",Toast.LENGTH_SHORT).show();
+                getFragmentManager().popBackStack();
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
