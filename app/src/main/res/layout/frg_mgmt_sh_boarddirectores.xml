@@ -68,30 +68,29 @@
         android:layout_height="wrap_content">
         <TextView
             android:layout_width="0dp"
-            android:text="السيد جمال نايف براهمة"
+            android:text="السيد سعيد خليل صيام"
             android:layout_weight="1"
             android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="رئيس مجلس الادارة و الرئيس التنفيذي"
+            android:text="عضو مجلس إدارة"
             android:layout_height="wrap_content" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_marginTop="5dp"
-
         android:layout_height="wrap_content">
         <TextView
             android:layout_width="0dp"
-            android:text="السيد جمال نايف براهمة"
+            android:text="السيد روبرت جنفزيان"
             android:layout_weight="1"
             android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="رئيس مجلس الادارة و الرئيس التنفيذي"
+            android:text="عضو مجلس إدارة"
             android:layout_height="wrap_content" />
     </LinearLayout>
     <LinearLayout
@@ -102,13 +101,62 @@
         android:layout_height="wrap_content">
         <TextView
             android:layout_width="0dp"
-            android:text="السيد جمال نايف براهمة"
+            android:text="السيد تحسين نايف براهمة"
             android:layout_weight="1"
             android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="رئيس مجلس الادارة و الرئيس التنفيذي"
+            android:text="عضو مجلس إدارة"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
+            android:text="السيد لؤي شفيق خوري"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="عضو مجلس إدارة"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+<LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="#f4e4ed"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
+            android:text="السيد جان رفائيل صليب"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="عضو مجلس إدارة"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
+            android:text="الدكتور سميح حسين العبد"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="عضو مجلس إدارة"
             android:layout_height="wrap_content" />
     </LinearLayout>
 

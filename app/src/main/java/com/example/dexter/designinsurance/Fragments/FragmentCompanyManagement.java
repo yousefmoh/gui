@@ -40,9 +40,9 @@ public class FragmentCompanyManagement extends Fragment {
         directorimgId3=(ImageView)view.findViewById(R.id.directorimgId3);
         directorimgId4=(ImageView)view.findViewById(R.id.directorimgId4);
         Picasso.with(getActivity()).load("http://gui.ps/plugins/kcfinder/upload/albums/x2.jpg").into(directorimgId1);
-        Picasso.with(getActivity()).load("http://gui.ps/plugins/kcfinder/upload/albums/x2.jpg").into(directorimgId2);
-        Picasso.with(getActivity()).load("http://gui.ps/plugins/kcfinder/upload/albums/x2.jpg").into(directorimgId3);
-        Picasso.with(getActivity()).load("http://gui.ps/plugins/kcfinder/upload/albums/x2.jpg").into(directorimgId4);
+        Picasso.with(getActivity()).load("http://gui.ps/plugins/kcfinder/upload/albums/x1.jpg").into(directorimgId2);
+        Picasso.with(getActivity()).load("http://gui.ps/plugins/kcfinder/upload/albums/x4.jpg").into(directorimgId3);
+        Picasso.with(getActivity()).load("http://gui.ps/plugins/kcfinder/upload/albums/x3.jpg").into(directorimgId4);
 
 
         InitToolbar();

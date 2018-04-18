@@ -46,9 +46,14 @@
             android:layout_height="100dp" />
     <TextView
         android:layout_width="match_parent"
-        android:text="@string/album"
+        android:gravity="center"
+        android:text="@string/jamal"
+        android:textSize="10sp"
+        android:textColor="#ffff"
+        android:layout_gravity="center"
         android:background="#9c0054"
         android:layout_height="50dp" />
+
     </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
@@ -64,7 +69,11 @@
                 android:layout_height="100dp" />
             <TextView
                 android:layout_width="match_parent"
-                android:text="@string/album"
+                android:gravity="center"
+                android:text="@string/tahseen"
+                android:textSize="10sp"
+                android:textColor="#ffff"
+                android:layout_gravity="center"
                 android:background="#9c0054"
                 android:layout_height="50dp" />
         </LinearLayout>
@@ -89,9 +98,14 @@
                 android:layout_height="100dp" />
             <TextView
                 android:layout_width="match_parent"
-                android:text="@string/album"
+                android:gravity="center"
+                android:text="@string/nabeel"
+                android:textSize="10sp"
+                android:textColor="#ffff"
+                android:layout_gravity="center"
                 android:background="#9c0054"
                 android:layout_height="50dp" />
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
@@ -108,7 +122,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:gravity="center"
-                android:text="@string/jamal"
+                android:text="@string/mahmoud"
                 android:textSize="10sp"
                 android:textColor="#ffff"
                 android:layout_gravity="center"

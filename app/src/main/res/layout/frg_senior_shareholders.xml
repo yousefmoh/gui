@@ -51,6 +51,39 @@
         android:layout_height="wrap_content">
         <TextView
             android:layout_width="0dp"
+            android:text="السيد سعيد خليل صيام"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="عدد الأسهم 500.000 بنسبة %10.00"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="#f4e4ed"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="0dp"
+        android:text="السيدة بشرى فايز براهمه"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="عدد الأسهم 722.139 بنسبة %13.13"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
             android:text="السيد نبيل جوزف قطران"
             android:layout_weight="1"
             android:layout_height="wrap_content" />
@@ -60,55 +93,136 @@
             android:text="عدد الأسهم 500.000 بنسبة %10.00"
             android:layout_height="wrap_content" />
     </LinearLayout>
-    <LinearLayout
+     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:layout_marginTop="5dp"
         android:background="#f4e4ed"
         android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="0dp"
+        android:text="السيد لؤي شفيق خوري"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
-            android:text="السيد جمال نايف براهمة"
             android:layout_weight="1"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="رئيس مجلس الادارة و الرئيس التنفيذي"
+            android:text="عدد الأسهم 722.139 بنسبة %13.13"
             android:layout_height="wrap_content" />
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_marginTop="5dp"
 
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="0dp"
-            android:text="السيد جمال نايف براهمة"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="رئيس مجلس الادارة و الرئيس التنفيذي"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:background="#f4e4ed"
         android:layout_marginTop="5dp"
         android:layout_height="wrap_content">
         <TextView
             android:layout_width="0dp"
-            android:text="السيد جمال نايف براهمة"
+            android:text="السيد تحسين نايف براهمه"
             android:layout_weight="1"
             android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="رئيس مجلس الادارة و الرئيس التنفيذي"
+            android:text="عدد الأسهم 500.000 بنسبة %10.00"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="#f4e4ed"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="0dp"
+        android:text="شركة انوفيست للخدمات التجارية"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="عدد الأسهم 722.139 بنسبة %13.13"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
+            android:text="السيد امجد عدنان بسيسو"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="عدد الأسهم 500.000 بنسبة %10.00"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="#f4e4ed"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="0dp"
+        android:text="شركة املاك للاستثمار العقاري والتجارة"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="عدد الأسهم 722.139 بنسبة %13.13"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
+            android:text="   السيد نبيل محمد عباسي"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="عدد الأسهم 500.000 بنسبة %10.00"
+            android:layout_height="wrap_content" />
+    </LinearLayout>  <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="#f4e4ed"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="0dp"
+        android:text=" السيد جان رفائيل صليب"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="عدد الأسهم 722.139 بنسبة %13.13"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
+            android:text="  السيدة دينا عدنان بسيسو"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="عدد الأسهم 500.000 بنسبة %10.00"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
