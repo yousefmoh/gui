@@ -59,7 +59,7 @@ public class RequestThreeFragment extends Fragment  {
     String _path,_path2;
     String IdFilePath="";
     String drivelicencePath="";
-    String name,numb,Id,branchNumber,insuarnceType,accountNumber,payMethod;
+    String name,numb,Id,branchNumber,insuarnceType,accountNumber,payMethod,email;
     ProgressDialog progressDialog;
 
     @Override
@@ -77,6 +77,7 @@ public class RequestThreeFragment extends Fragment  {
         name=bundle.getString("name");
         numb=bundle.getString("numb");
         Id=bundle.getString("ID");
+        email=bundle.getString("email");
         branchNumber=bundle.getString("partionNumber");
         insuarnceType=bundle.getString("insuarnceType");
         accountNumber=bundle.getString("accountNumber");
@@ -229,7 +230,7 @@ return  "";
                 .client(client)
                 .build();
         final RequestInterface request = retrofit.create(RequestInterface.class);
-        Call<String> call = request.insertUser(name,Id,numb,branchNumber,insuarnceType,payMethod,accountNumber,userIdPath,userDriveLPath);
+        Call<String> call = request.insertUser(name,Id,numb,email,branchNumber,insuarnceType,payMethod,accountNumber,userIdPath,userDriveLPath);
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {

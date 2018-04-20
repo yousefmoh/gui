@@ -27,6 +27,8 @@ import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
@@ -45,7 +47,7 @@ public class RequestOneFragment extends Fragment  {
     Toolbar toolbar;
     TextView titlebar;
     TextView content;
-    EditText name,numb,Id;
+    EditText name,numb,Id,email;
     Button nextIdBtn;
     TextView oneText;
 
@@ -66,6 +68,7 @@ public class RequestOneFragment extends Fragment  {
         name=(EditText)view.findViewById(R.id.nameEditId);
         numb=(EditText)view.findViewById(R.id.mobileNumberEdit);
         Id=(EditText)view.findViewById(R.id.internationlIdEdit);
+        email=(EditText)view.findViewById(R.id.email);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
@@ -73,13 +76,18 @@ public class RequestOneFragment extends Fragment  {
         nextIdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (name.getText().toString().isEmpty()||numb.getText().toString().isEmpty()||Id.getText().toString().isEmpty())
+                if (name.getText().toString().isEmpty()||numb.getText().toString().isEmpty()||Id.getText().toString().isEmpty()||email.getText().toString().isEmpty())
                 {
-                      Toast.makeText(getActivity(),"Plase Make sure that you insert all data! Thanks ",Toast.LENGTH_SHORT).show();
+                      Toast.makeText(getActivity(),"Please Make sure that you insert all data! Thanks ",Toast.LENGTH_SHORT).show();
                       return;
 
-
                 }
+                if(!isEmailValid(email.getText().toString()))
+                {
+                    Toast.makeText(getActivity(),"Please Make sure that you write an valid email! Thanks ",Toast.LENGTH_SHORT).show();
+                     return;
+                }
+
 
                 PassData();
 
@@ -109,9 +117,19 @@ public class RequestOneFragment extends Fragment  {
         bundle.putString("name", name.getText()+"");
         bundle.putString("numb", numb.getText()+"");
         bundle.putString("ID", Id.getText()+"");
+        bundle.putString("email", email.getText()+"");
+
         fragment=new RequestTowFragment();
         fragment.setArguments(bundle);
         OpenFragment();
+    }
+
+
+    public static boolean isEmailValid(String email) {
+        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 
 

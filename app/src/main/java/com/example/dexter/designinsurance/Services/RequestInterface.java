@@ -55,6 +55,7 @@ public interface RequestInterface {
     Call<String> insertUser( @Field("username") String username,
                              @Field("international_Id") String international_Id,
                              @Field("mobilenumber") String mobilenumber,
+                             @Field("email") String email,
                              @Field("branchnumber") String branchnumber,
                              @Field("insurancetype") String insurancetype,
                              @Field("paymethod") String paymethod,

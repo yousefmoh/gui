@@ -32,7 +32,7 @@ public class RequestTowFragment extends Fragment  {
     Button nextIdBtn;
 
     int test=0;
-    String Name,ID,MobileNumber;
+    String Name,ID,MobileNumber,email;
     EditText payMethod,insuarnceType,accountNumber,partionNumber;
 
 
@@ -52,6 +52,7 @@ public class RequestTowFragment extends Fragment  {
         Name=bundle.getString("name");
         ID=bundle.getString("ID");
         MobileNumber=bundle.getString("numb");
+        email=bundle.getString("email");
         InitItems();
 
 
@@ -95,6 +96,8 @@ public class RequestTowFragment extends Fragment  {
         bundle.putString("name", Name);
         bundle.putString("numb", MobileNumber);
         bundle.putString("ID",ID);
+        bundle.putString("email",email);
+
         bundle.putString("partionNumber", partionNumber.getText()+"");
         bundle.putString("insuarnceType", insuarnceType.getText()+"");
         bundle.putString("accountNumber",accountNumber.getText()+"");
