@@ -45,6 +45,22 @@
                 android:id="@+id/internationlIdFile"
                 android:layout_height="wrap_content" />
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="right"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="رخصة المركبة"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content" />
+            <Button
+                android:layout_width="wrap_content"
+                android:text="أرفع ملف  "
+                android:id="@+id/carLicenceIdFile"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
 
     </LinearLayout>
     <LinearLayout

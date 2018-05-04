@@ -54,11 +54,12 @@ public class RequestThreeFragment extends Fragment  {
      String UserFilePath;
     String randomIdFileName,randomDrivelicene,userIdPath,userDriveLPath;
     TextView content;
-    Button confirminsurancerequestId,drivelicenceId,internationlIdFile;
+    Button confirminsurancerequestId,drivelicenceId,internationlIdFile,carLicenceIdFile;
     int flag=0;
-    String _path,_path2;
+    String _path,_path2,_path3;
     String IdFilePath="";
     String drivelicencePath="";
+    String carlicencePath="";
     String name,numb,Id,branchNumber,insuarnceType,accountNumber,payMethod,email;
     ProgressDialog progressDialog;
 
@@ -85,6 +86,9 @@ public class RequestThreeFragment extends Fragment  {
         confirminsurancerequestId=(Button)view.findViewById(R.id.confirminsurancerequestId);
         drivelicenceId=(Button)view.findViewById(R.id.drivelicenceId);
         internationlIdFile=(Button)view.findViewById(R.id.internationlIdFile);
+        carLicenceIdFile=(Button)view.findViewById(R.id.carLicenceIdFile);
+
+
         progressDialog=new ProgressDialog(getActivity());
 
         drivelicenceId.setOnClickListener(new View.OnClickListener() {
@@ -127,24 +131,44 @@ public class RequestThreeFragment extends Fragment  {
 
             }
         });
+
+        carLicenceIdFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                new ChooserDialog().with(getActivity())
+                        .withFilter(false, false, "jpg", "jpeg", "png")
+                        .withStartFile(_path3)
+                        .withResources(R.string.title_choose, R.string.title_choose, R.string.dialog_cancel)
+                        .withChosenListener(new ChooserDialog.Result() {
+                            @Override
+                            public void onChoosePath(String path, File pathFile) {
+
+                                carlicencePath=path;
+                            }
+                        })
+                        .build()
+                        .show();
+            }
+        });
+
+
+
+
+
         confirminsurancerequestId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(IdFilePath.isEmpty()||drivelicencePath.isEmpty()) {
+                if(IdFilePath.isEmpty()||drivelicencePath.isEmpty()||carlicencePath.isEmpty()) {
                     Toast.makeText(getActivity(),  "Please Choose  Files ", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 new AsyncTaskRunner().execute();
-               // new MyTask2().execute();
 
-             // new UploadDataTask1().execute();
-               //new AsyncTaskRunner().execute();
-                //Toast.makeText(getActivity(), userIdPath,Toast.LENGTH_SHORT).show();
-
-            // userIdPath   = uploadFile(IdFilePath,getRandomName());
-            // userDriveLPath   = uploadFile(drivelicencePath,getRandomName());
             }
         });
+
+
 
         return view;
     }
@@ -180,13 +204,14 @@ public class RequestThreeFragment extends Fragment  {
           public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
               ResponseModel responsem=response.body();
               Toast.makeText(getActivity(), responsem.getMessage()+"",Toast.LENGTH_SHORT).show();
-              //Toast.makeText(getActivity(), responsem.getSuccess()+"",Toast.LENGTH_SHORT).show();
                 String result = "http://snap-project.com/insuranceapis/uploads/" + Fname + "." + extension;
                   if (Pflag==0){
                     userIdPath=result;
                   }
-                  else
+                  else if(Pflag==1)
                       userDriveLPath=result;
+                  else
+                      carlicencePath=result;
 
           }
 
@@ -230,14 +255,17 @@ return  "";
                 .client(client)
                 .build();
         final RequestInterface request = retrofit.create(RequestInterface.class);
-        Call<String> call = request.insertUser(name,Id,numb,email,branchNumber,insuarnceType,payMethod,accountNumber,userIdPath,userDriveLPath);
+        Call<String> call = request.insertUser(name,Id,numb,email,branchNumber,insuarnceType,payMethod,accountNumber,userIdPath,userDriveLPath,carlicencePath);
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
-            //    Toast.makeText(getActivity(),response.body(),Toast.LENGTH_SHORT).show();
+
+                  Toast.makeText(getActivity(),"Success",Toast.LENGTH_SHORT).show();
+
+                   Toast.makeText(getActivity(),response.body(),Toast.LENGTH_SHORT).show();
                // Toast.makeText(getActivity(),response+"",Toast.LENGTH_SHORT).show();
-                Toast.makeText(getActivity(),userIdPath+"",Toast.LENGTH_SHORT).show();
-                Toast.makeText(getActivity(),userDriveLPath+"",Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(getActivity(),userIdPath+"",Toast.LENGTH_SHORT).show();
+           //     Toast.makeText(getActivity(),userDriveLPath+"",Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
 
             }
@@ -245,6 +273,8 @@ return  "";
             @Override
             public void onFailure(Call<String> call, Throwable t) {
                 Log.d("ee",t.getMessage());
+
+                Toast.makeText(getActivity(),t.getMessage(),Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -254,15 +284,6 @@ return  "";
     }
 
 
-/*
- bundle.putString("name", Name);
-        bundle.putString("numb", MobileNumber);
-        bundle.putString("ID",ID);
-        bundle.putString("partionNumber", partionNumber.getText()+"");
-        bundle.putString("insuarnceType", insuarnceType.getText()+"");
-        bundle.putString("accountNumber",accountNumber.getText()+"");
-        bundle.putString("payMethod",payMethod.getText()+"");
- */
 
     public  void  InitToolbar()
     {
@@ -309,6 +330,8 @@ return  "";
             try {
                 uploadFile(IdFilePath,getRandomName(),0);
                 uploadFile(drivelicencePath,getRandomName(),1);
+                uploadFile(carlicencePath,getRandomName(),2);
+
                 int time = Integer.parseInt("10000");
                 Thread.sleep(time);
 
@@ -325,9 +348,7 @@ return  "";
 
         @Override
         protected void onPostExecute(String result) {
-          //  Toast.makeText(getActivity(),userIdPath+"",Toast.LENGTH_SHORT).show();
-           // Toast.makeText(getActivity(),userDriveLPath+"",Toast.LENGTH_SHORT).show();
-         //  progressDialog.dismiss();
+
            insertUser();
         }
 
