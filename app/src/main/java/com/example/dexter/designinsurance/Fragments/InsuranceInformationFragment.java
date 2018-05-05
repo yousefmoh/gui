@@ -26,6 +26,7 @@ public class InsuranceInformationFragment extends Fragment  {
     Toolbar toolbar;
     TextView titlebar;
     TextView content;
+    TextView insuranceTitle,insuranceSubTitle,insuranceInfo,insuranceInfo2,insuranceInfo3;
 
 
 
@@ -40,6 +41,15 @@ public class InsuranceInformationFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
         view =inflater.inflate(R.layout.insurance_information_fragment, container, false);
+        insuranceTitle=(TextView)view.findViewById(R.id.insuranceTitle);
+        insuranceSubTitle=(TextView)view.findViewById(R.id.insuranceSubTitle);
+        insuranceInfo=(TextView)view.findViewById(R.id.insuranceInfo);
+        insuranceInfo2=(TextView)view.findViewById(R.id.insuranceInfo2);
+        insuranceInfo3=(TextView)view.findViewById(R.id.insuranceInfo3);
+
+        setContent();
+
+
       //  content=(TextView)view.findViewById((R.id.contentId));
         InitToolbar();
        // setContent();
@@ -49,16 +59,39 @@ public class InsuranceInformationFragment extends Fragment  {
 
 
     public void setContent()
-     {   String FragmentName=Flags.fragmentname;
-         switch(FragmentName) {
-             case "OurMessage":
-                 content.setText(R.string.our_messagetext);
+     {   int  Position=Flags.Positionflag;
+         switch(Position) {
+             case 0:
+
+                 Toast.makeText(this.getActivity(),Position+"",Toast.LENGTH_SHORT).show();
+              //   content.setText(R.string.our_messagetext);
                  break;
-                 case "OurVision":
-                 content.setText(R.string.our_vision_text);
+
+             case 1:
+                 insuranceSubTitle.setText(R.string.MarineInsuranceSubTitle);
+                 insuranceInfo.setText(R.string.MarineInsurance);
+                 insuranceInfo2.setText("");
+                 insuranceInfo3.setText("");
+
+                 insuranceTitle.setText(R.string.MarineInsuranceTitle);
+                 Toast.makeText(this.getActivity(),Position+"",Toast.LENGTH_SHORT).show();
+                 // content.setText(R.string.about_international);
                  break;
-             case "AboutGlobal":
-                 content.setText(R.string.about_international);
+             case 2:
+                 Toast.makeText(this.getActivity(),Position+"",Toast.LENGTH_SHORT).show();
+                 // content.setText(R.string.about_international);
+                 break;
+             case 3:
+                 Toast.makeText(this.getActivity(),Position+"",Toast.LENGTH_SHORT).show();
+                 // content.setText(R.string.about_international);
+                 break;
+             case 4:
+                 Toast.makeText(this.getActivity(),Position+"",Toast.LENGTH_SHORT).show();
+                 // content.setText(R.string.about_international);
+                 break;
+             case 5:
+                 Toast.makeText(this.getActivity(),Position+"",Toast.LENGTH_SHORT).show();
+                 // content.setText(R.string.about_international);
                  break;
          }
      }

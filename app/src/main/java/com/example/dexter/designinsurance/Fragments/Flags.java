@@ -8,4 +8,7 @@ public   class Flags {
 public  static  int fragmentflag=0;
 public  static  String fragmentname="";
 
+public  static  int  Positionflag=-1;
+
+
 }

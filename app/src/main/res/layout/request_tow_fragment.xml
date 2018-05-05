@@ -84,6 +84,13 @@
 
         </LinearLayout>
 
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            />
+
     </LinearLayout>
 
     <LinearLayout
@@ -103,4 +110,5 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
+
 </RelativeLayout>

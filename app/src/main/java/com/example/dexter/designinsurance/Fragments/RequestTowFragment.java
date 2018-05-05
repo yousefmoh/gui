@@ -12,12 +12,18 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dexter.designinsurance.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by dexter on 3/31/2018.
@@ -34,6 +40,8 @@ public class RequestTowFragment extends Fragment  {
     int test=0;
     String Name,ID,MobileNumber,email;
     EditText payMethod,insuarnceType,accountNumber,partionNumber;
+    Adapter adapter;
+    Spinner spinner;
 
 
 
@@ -56,9 +64,20 @@ public class RequestTowFragment extends Fragment  {
         InitItems();
 
 
+        List<String> list = new ArrayList<String>();
+        list.add("list 1");
+        list.add("list 2");
+        list.add("list 3");
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_spinner_item, list);
+        spinner.setAdapter(dataAdapter);
+
+
         nextIdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+             //   Toast.makeText(getActivity(),spinner.getSelectedItem()+"",Toast.LENGTH_SHORT).show();
+
                 if (partionNumber.getText().toString().isEmpty()
                         ||insuarnceType.getText().toString().isEmpty()
                     ||payMethod.getText().toString().isEmpty()
@@ -85,6 +104,7 @@ public class RequestTowFragment extends Fragment  {
         insuarnceType=(EditText)view.findViewById(R.id.insuranceType);
         payMethod=(EditText)view.findViewById(R.id.payMethodId);
         accountNumber=(EditText)view.findViewById(R.id.accountNumber);
+        spinner=(Spinner) view.findViewById(R.id.spinner);
     }
 
 

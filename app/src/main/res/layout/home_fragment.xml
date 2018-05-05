@@ -11,300 +11,253 @@
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content">
-    <ImageView
-        android:layout_width="match_parent"
-        android:src="@drawable/logo"
-        android:layout_marginTop="5dp"
-        android:layout_height="wrap_content" />
-    </RelativeLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_height="110dp">
-        <FrameLayout
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="match_parent"
-        android:layout_gravity="left"
-        >
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="70dp"
-            android:layout_gravity="center"
-            android:id="@+id/albumImg"
-            android:layout_marginBottom="5dp"
-            android:layout_height="70dp"
-            android:src="#9b1d54"/>
-
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="5dp"
-            android:layout_gravity="center"
-            android:scaleType="fitCenter"
-            android:src="@drawable/picture" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:text="@string/album"
-                android:layout_marginTop="2dp"
-                android:layout_gravity="center|bottom"
-                android:layout_height="wrap_content" />
-
-    </FrameLayout>
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-
-            android:layout_height="match_parent"
-            android:layout_gravity="left"
-            >
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="70dp"
-                android:layout_gravity="center"
-                android:id="@+id/insurance_packageImg"
-                android:layout_height="70dp"
-                android:layout_marginBottom="5dp"
-                android:src="#9b1d54"/>
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginBottom="5dp"
-                android:layout_gravity="center"
-                android:scaleType="fitCenter"
-                android:src="@drawable/car_insurance" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:text="@string/insurancePackage"
-                android:layout_marginTop="2dp"
-                android:layout_gravity="center|bottom"
-                android:layout_height="wrap_content" />
-
-
-
-        </FrameLayout>
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:layout_gravity="left"
-            >
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="70dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:id="@+id/aboutusImage"
-                android:layout_height="70dp"
-                android:src="#9b1d54"/>
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginBottom="5dp"
-                android:layout_gravity="center"
-                android:scaleType="fitCenter"
-                android:src="@drawable/aboutfill" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:text="@string/about_us"
-                android:layout_marginTop="2dp"
-                android:layout_gravity="center|bottom"
-                android:layout_height="wrap_content" />
-        </FrameLayout>
-    </LinearLayout>
+            android:layout_width="match_parent"
+            android:src="@drawable/logo"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_height="100dp">
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:layout_gravity="left"
-            >
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_height="110dp">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="70dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:layout_height="70dp"
-                android:src="#9b1d54"/>
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="70dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_height="70dp"
+                    android:src="#9b1d54"/>
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/place" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:text="@string/locations"
-                android:layout_marginTop="2dp"
-                android:layout_gravity="center|bottom"
-                android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/insurancerequestId"
+                    android:layout_marginBottom="5dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/user_location" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="تقديم طلب تأمين"
+                    android:layout_marginTop="2dp"
+                    android:layout_gravity="center|bottom"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
 
-        </FrameLayout>
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:layout_gravity="left"
-            >
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                >
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="70dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:id="@+id/contact_usId"
-                android:layout_height="70dp"
-                android:src="#9b1d54"/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="70dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/insurance_packageImg"
+                    android:layout_height="70dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="#9b1d54"/>
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/post" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:text="تواصل معنا"
-                android:layout_marginTop="2dp"
-                android:layout_gravity="center|bottom"
-                android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/car_insurance" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/insurancePackage"
+                    android:layout_marginTop="2dp"
+                    android:layout_gravity="center|bottom"
+                    android:layout_height="wrap_content" />
 
-        </FrameLayout>
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:layout_gravity="left"
-            >
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="70dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:layout_height="70dp"
-                android:src="#9b1d54"/>
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:id="@+id/insurancerequestId"
-                android:layout_marginBottom="5dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/user_location" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:text="@string/emp"
-                android:layout_marginTop="2dp"
-                android:layout_gravity="center|bottom"
-                android:layout_height="wrap_content" />
-        </FrameLayout>
+
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="70dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/aboutusImage"
+                    android:layout_height="70dp"
+                    android:src="#9b1d54"/>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/aboutfill" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/about_us"
+                    android:layout_marginTop="2dp"
+                    android:layout_gravity="center|bottom"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_height="100dp">
+
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="70dp"
+                    android:layout_gravity="center"
+                    android:layout_height="70dp"
+                    android:id="@+id/helpBtn"
+                    android:layout_marginBottom="5dp"
+                    android:src="#9b1d54"/>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/help" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/help"
+                    android:layout_marginTop="2dp"
+                    android:layout_gravity="center|bottom"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="70dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/contact_usId"
+                    android:layout_height="70dp"
+                    android:src="#9b1d54"/>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/post" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="تواصل معنا"
+                    android:layout_marginTop="2dp"
+                    android:layout_gravity="center|bottom"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="70dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/albumImg"
+                    android:layout_marginBottom="5dp"
+                    android:layout_height="70dp"
+                    android:src="#9b1d54"/>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/picture" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/album"
+                    android:layout_marginTop="2dp"
+                    android:layout_gravity="center|bottom"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_height="100dp">
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="70dp"
+                    android:layout_gravity="center"
+                    android:layout_height="70dp"
+                    android:id="@+id/repoortId"
+                    android:layout_marginBottom="5dp"
+                    android:src="#9b1d54"/>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/feedback" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/saywhatyouwant"
+                    android:layout_gravity="center|bottom"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+        </LinearLayout>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_height="100dp">
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:layout_gravity="left"
-            >
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="70dp"
-                android:layout_gravity="center"
-                android:layout_height="70dp"
-                android:id="@+id/repoortId"
-                android:layout_marginBottom="5dp"
-                android:src="#9b1d54"/>
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:scaleType="fitCenter"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/feedback" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="@string/report"
-                android:layout_gravity="center|bottom"
-                android:layout_height="wrap_content" />
-
-        </FrameLayout>
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:layout_gravity="left"
-            >
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="70dp"
-                android:layout_gravity="center"
-                android:layout_height="70dp"
-                android:id="@+id/helpBtn"
-                android:layout_marginBottom="5dp"
-                android:src="#9b1d54"/>
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:scaleType="fitCenter"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/help" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:text="@string/help"
-                android:layout_marginTop="2dp"
-                android:layout_gravity="center|bottom"
-                android:layout_height="wrap_content" />
-        </FrameLayout>
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:layout_gravity="left"
-            >
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="70dp"
-                android:layout_gravity="center"
-                android:layout_height="70dp"
-                android:layout_marginBottom="5dp"
-                android:src="#9b1d54"/>
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:scaleType="center"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/dail" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:text="@string/emergency_numbers"
-                android:layout_marginTop="2dp"
-                android:layout_gravity="center|bottom"
-                android:layout_height="wrap_content" />
-        </FrameLayout>
-    </LinearLayout>
-</LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

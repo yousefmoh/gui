@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.dexter.designinsurance.Fragments.Flags;
 import com.example.dexter.designinsurance.Fragments.InsuranceInformationFragment;
 import com.example.dexter.designinsurance.Models.InsurancePackagesModel;
 import com.example.dexter.designinsurance.R;
@@ -42,13 +43,15 @@ public class InsurancePackageAdapter extends RecyclerView.Adapter<InsurancePacka
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
           holder.name.setText(data.get(position).getName());
           Picasso.with(context).load(data.get(position).getImageUrl()).into(holder.imageView);
           holder.insurance_card_view.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View view) {
 
+
+                  Flags.Positionflag=position;
                   fragment=new InsuranceInformationFragment();
                   OpenFragment();
               }
