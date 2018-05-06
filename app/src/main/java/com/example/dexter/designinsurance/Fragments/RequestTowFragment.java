@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,19 +30,20 @@ import java.util.List;
  * Created by dexter on 3/31/2018.
  */
 
-public class RequestTowFragment extends Fragment  {
+public class RequestTowFragment extends Fragment implements AdapterView.OnItemSelectedListener {
     View view;
     Fragment fragment;
     Toolbar toolbar;
     TextView titlebar;
-    TextView content;
+    TextView content,accountNumberText;
     Button nextIdBtn;
 
     int test=0;
     String Name,ID,MobileNumber,email;
-    EditText payMethod,insuarnceType,accountNumber,partionNumber;
+    EditText accountNumber;
+
     Adapter adapter;
-    Spinner spinner;
+    Spinner spinner,insuarnceType,payMethod;
 
 
 
@@ -64,24 +66,14 @@ public class RequestTowFragment extends Fragment  {
         InitItems();
 
 
-        List<String> list = new ArrayList<String>();
-        list.add("list 1");
-        list.add("list 2");
-        list.add("list 3");
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_spinner_item, list);
-        spinner.setAdapter(dataAdapter);
-
-
         nextIdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
              //   Toast.makeText(getActivity(),spinner.getSelectedItem()+"",Toast.LENGTH_SHORT).show();
 
-                if (partionNumber.getText().toString().isEmpty()
-                        ||insuarnceType.getText().toString().isEmpty()
-                    ||payMethod.getText().toString().isEmpty()
-                        ||accountNumber.getText().toString().isEmpty())
+                if (accountNumber.getText().toString().isEmpty()&&accountNumber.getVisibility()==View.VISIBLE)
                 {
 
                     Toast.makeText(getActivity(),"Plase Make sure that you insert all data! Thanks ",Toast.LENGTH_SHORT).show();
@@ -95,16 +87,59 @@ public class RequestTowFragment extends Fragment  {
 
             }
         });
+
+
         InitToolbar();
+        SetSpinnersContent();
+        accountNumber.setVisibility(View.GONE);
+
+
+
+
+
         return view;
+    }
+    private  void  SetSpinnersContent()
+    {
+        List<String> list = new ArrayList<String>();
+        list.add("نابلس");
+        list.add("طولكرم");
+        list.add("رام الله");
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_spinner_item, list);
+
+
+        List<String> insuracneTypelist = new ArrayList<String>();
+        insuracneTypelist.add("نوع 1");
+        insuracneTypelist.add("نوع 2");
+        ArrayAdapter<String> insuranceAdapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_spinner_item, insuracneTypelist);
+
+
+        List<String> payMethodList = new ArrayList<String>();
+        payMethodList.add("نقدي");
+        payMethodList.add("شيكات");
+        ArrayAdapter<String> payMethodAdapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_spinner_item, payMethodList);
+
+
+
+
+        payMethod.setAdapter(payMethodAdapter);
+        insuarnceType.setAdapter(insuranceAdapter);
+        spinner.setAdapter(dataAdapter);
+
     }
     private  void  InitItems()
     {   nextIdBtn=(Button)view.findViewById(R.id.nextIdBtn);
-        partionNumber=(EditText)view.findViewById(R.id.partionNumber);
-        insuarnceType=(EditText)view.findViewById(R.id.insuranceType);
-        payMethod=(EditText)view.findViewById(R.id.payMethodId);
+        insuarnceType=(Spinner)view.findViewById(R.id.insuranceType);
+        payMethod=(Spinner)view.findViewById(R.id.payMethodId);
         accountNumber=(EditText)view.findViewById(R.id.accountNumber);
         spinner=(Spinner) view.findViewById(R.id.spinner);
+        accountNumberText=(TextView) view.findViewById(R.id.accountNumberText);
+
+        payMethod.setOnItemSelectedListener(this);
+
     }
 
 
@@ -118,10 +153,18 @@ public class RequestTowFragment extends Fragment  {
         bundle.putString("ID",ID);
         bundle.putString("email",email);
 
-        bundle.putString("partionNumber", partionNumber.getText()+"");
-        bundle.putString("insuarnceType", insuarnceType.getText()+"");
-        bundle.putString("accountNumber",accountNumber.getText()+"");
-        bundle.putString("payMethod",payMethod.getText()+"");
+        bundle.putString("partionNumber",spinner.getSelectedItem()+"");
+        bundle.putString("insuarnceType", insuarnceType.getSelectedItem()+"");
+
+        bundle.putString("payMethod",payMethod.getSelectedItem()+"");
+
+        if(accountNumber.getVisibility()==View.VISIBLE){
+            bundle.putString("accountNumber",accountNumber.getText()+"");}
+         else
+        {
+            bundle.putString("accountNumber","");
+        }
+
         fragment=new RequestThreeFragment();
         fragment.setArguments(bundle);
         OpenFragment();
@@ -168,5 +211,22 @@ public class RequestTowFragment extends Fragment  {
     }
 
 
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        if(i==0)
+        {
+            accountNumber.setVisibility(View.GONE);
+         //   accountNumberText.setText(R.string.accountNumberS);
 
+        }
+else
+    accountNumber.setVisibility(View.VISIBLE);
+         accountNumberText.setText(R.string.accountNumberS);
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
 }

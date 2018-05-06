@@ -205,13 +205,15 @@ public class RequestThreeFragment extends Fragment  {
               ResponseModel responsem=response.body();
               Toast.makeText(getActivity(), responsem.getMessage()+"",Toast.LENGTH_SHORT).show();
                 String result = "http://snap-project.com/insuranceapis/uploads/" + Fname + "." + extension;
-                  if (Pflag==0){
+              userIdPath=result;
+
+                /*  if (Pflag==0){
                     userIdPath=result;
                   }
                   else if(Pflag==1)
                       userDriveLPath=result;
-                  else
-                      carlicencePath=result;
+                  else  if(Pflag==2)
+                      carlicencePath=result;*/
 
           }
 
@@ -226,6 +228,116 @@ public class RequestThreeFragment extends Fragment  {
 return  "";
 
     }
+
+
+
+
+    private String  uploadFile2(String path, final String Fname, final int Pflag)
+    {
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
+        OkHttpClient client = new OkHttpClient();
+
+        Map<String, RequestBody> map = new HashMap<>();
+        File file = new File(path);
+        RequestBody requestBody = RequestBody.create(MediaType.parse("*/*"), file);
+        final String extension = file.getName().split("\\.")[1];
+
+        // map.put("file\"; filename=\"" + file.getName() + "\"", requestBody);
+        map.put("file\"; filename=\"" + Fname+ "."+extension + "\"", requestBody);
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://snap-project.com/")
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .client(client)
+                .build();
+        final RequestInterface request = retrofit.create(RequestInterface.class);
+
+        Call<ResponseModel> call = request.uploadFile(map);
+        call.enqueue(new Callback<ResponseModel>() {
+            @Override
+            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                ResponseModel responsem=response.body();
+                Toast.makeText(getActivity(), responsem.getMessage()+"",Toast.LENGTH_SHORT).show();
+                String result = "http://snap-project.com/insuranceapis/uploads/" + Fname + "." + extension;
+                userDriveLPath=result;
+
+                /*  if (Pflag==0){
+                    userIdPath=result;
+                  }
+                  else if(Pflag==1)
+                      userDriveLPath=result;
+                  else  if(Pflag==2)
+                      carlicencePath=result;*/
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                Toast.makeText(getActivity(), t.getMessage()+"",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+        return  "";
+
+    }
+
+
+
+    private String  uploadFile3(String path, final String Fname, final int Pflag)
+    {
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
+        OkHttpClient client = new OkHttpClient();
+
+        Map<String, RequestBody> map = new HashMap<>();
+        File file = new File(path);
+        RequestBody requestBody = RequestBody.create(MediaType.parse("*/*"), file);
+        final String extension = file.getName().split("\\.")[1];
+
+        // map.put("file\"; filename=\"" + file.getName() + "\"", requestBody);
+        map.put("file\"; filename=\"" + Fname+ "."+extension + "\"", requestBody);
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://snap-project.com/")
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .client(client)
+                .build();
+        final RequestInterface request = retrofit.create(RequestInterface.class);
+
+        Call<ResponseModel> call = request.uploadFile(map);
+        call.enqueue(new Callback<ResponseModel>() {
+            @Override
+            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                ResponseModel responsem=response.body();
+                Toast.makeText(getActivity(), responsem.getMessage()+"",Toast.LENGTH_SHORT).show();
+                String result = "http://snap-project.com/insuranceapis/uploads/" + Fname + "." + extension;
+                carlicencePath=result;
+                /*  if (Pflag==0){
+                    userIdPath=result;
+                  }
+                  else if(Pflag==1)
+                      userDriveLPath=result;
+                  else  if(Pflag==2)
+                      carlicencePath=result;*/
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                Toast.makeText(getActivity(), t.getMessage()+"",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+        return  "";
+
+    }
+
+
 
 
     protected String getRandomName() {
@@ -263,9 +375,7 @@ return  "";
                   Toast.makeText(getActivity(),"Success",Toast.LENGTH_SHORT).show();
 
                    Toast.makeText(getActivity(),response.body(),Toast.LENGTH_SHORT).show();
-               // Toast.makeText(getActivity(),response+"",Toast.LENGTH_SHORT).show();
-             //   Toast.makeText(getActivity(),userIdPath+"",Toast.LENGTH_SHORT).show();
-           //     Toast.makeText(getActivity(),userDriveLPath+"",Toast.LENGTH_SHORT).show();
+
                 progressDialog.dismiss();
 
             }
@@ -329,11 +439,11 @@ return  "";
             publishProgress("Sleeping..."); // Calls onProgressUpdate()
             try {
                 uploadFile(IdFilePath,getRandomName(),0);
-                uploadFile(drivelicencePath,getRandomName(),1);
-                uploadFile(carlicencePath,getRandomName(),2);
-
-                int time = Integer.parseInt("10000");
+                uploadFile2(drivelicencePath,getRandomName(),1);
+                uploadFile3(carlicencePath,getRandomName(),2);
+                int time = Integer.parseInt("20000");
                 Thread.sleep(time);
+
 
             } catch (InterruptedException e) {
                 e.printStackTrace();

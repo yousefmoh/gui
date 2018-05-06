@@ -67,6 +67,14 @@ public interface RequestInterface {
 
     );
 
+
+
+
+    @FormUrlEncoded
+    @POST("/insuranceapis/insertfeedback.php")
+    Call<String> insertFeedback( @Field("feedback") String Feedback
+
+    );
 //username,international_Id, mobilenumber,branchnumber,insurancetype,paymethod,accountnumber
 
 
