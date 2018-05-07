@@ -3,6 +3,7 @@ package com.example.dexter.designinsurance.Fragments;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,11 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dexter.designinsurance.GallaryActivity;
 import com.example.dexter.designinsurance.InsuranceRequestActivity;
 import com.example.dexter.designinsurance.R;
+import com.example.dexter.designinsurance.TypefaceUtil;
 
 /**
  * Created by dexter on 3/31/2018.
@@ -25,11 +28,13 @@ public class FragmentHome extends Fragment  implements View.OnClickListener {
     View view;
     ImageView aboutus,album,insurancePackage,contact_us,emergancyNumbers,help,report,locations,insurancerequest;
     Fragment fragment;
+    TextView testText;
 
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -39,6 +44,11 @@ public class FragmentHome extends Fragment  implements View.OnClickListener {
 
         view =inflater.inflate(R.layout.home_fragment, container, false);
         setItems();
+        testText=(TextView)view.findViewById(R.id.testText);
+
+
+        //Typeface type = Typeface.createFromAsset(getActivity().getAssets(),"fonts/test2.ttf");
+        //testText.setTypeface(type);
 
         return view;
     }

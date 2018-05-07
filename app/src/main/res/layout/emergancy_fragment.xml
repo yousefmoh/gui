@@ -27,6 +27,7 @@
     android:orientation="vertical"
     android:layout_below="@+id/title"
     android:id="@+id/buttonslayout"
+
     android:layout_gravity="center"
     android:gravity="right"
     android:layout_marginRight="10dp"
@@ -35,6 +36,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:id="@+id/contentId"
+android:typeface="serif"
+        android:text="@string/emergencycontent"
         android:layout_height="wrap_content" />
 </LinearLayout>
 </RelativeLayout>

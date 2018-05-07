@@ -68,9 +68,7 @@ public class InformationFragment extends Fragment  {
     {
 
         toolbar=(Toolbar)view.findViewById(R.id.custom_toolbar) ;
-       // titlebar=(TextView)view.findViewById(R.id.titlebar);
-       // titlebar.setText("My title");
-       // toolbar.setTitle("aaaa");
+
 
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);

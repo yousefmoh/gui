@@ -2,6 +2,7 @@ package com.example.dexter.designinsurance.Fragments;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -27,7 +28,7 @@ public class CallUsFragment extends Fragment  {
     Fragment fragment;
     Toolbar toolbar;
     TextView titlebar;
-    TextView content;
+    TextView content,nametext,place,email,phone,description;
     Button sendEmailBtn;
 
 
@@ -45,7 +46,11 @@ public class CallUsFragment extends Fragment  {
 
         view =inflater.inflate(R.layout.callus_fragment, container, false);
         InitToolbar();
+        SetFont();
         sendEmailBtn=(Button)view.findViewById(R.id.sendEmailBtn);
+
+
+
         sendEmailBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,7 +63,22 @@ public class CallUsFragment extends Fragment  {
 
 
 
+       void  SetFont()
+       {
+           Typeface type = Typeface.createFromAsset(getActivity().getAssets(),"fonts/oredoo.ttf");
+           nametext=(TextView) view.findViewById(R.id.nametext);
+           place=(TextView) view.findViewById(R.id.place);
+           email=(TextView) view.findViewById(R.id.email);
+           phone=(TextView) view.findViewById(R.id.phone);
+           description=(TextView) view.findViewById(R.id.description);
 
+           nametext.setTypeface(type);
+           place.setTypeface(type);
+           email.setTypeface(type);
+           phone.setTypeface(type);
+           description.setTypeface(type);
+
+       }
 
 
     public  void  InitToolbar()

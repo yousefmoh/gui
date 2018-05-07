@@ -1,6 +1,7 @@
 package com.example.dexter.designinsurance.Fragments;
 
 import android.app.Fragment;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -41,13 +42,20 @@ public class InsuranceInformationFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
         view =inflater.inflate(R.layout.insurance_information_fragment, container, false);
+        Typeface type = Typeface.createFromAsset(getActivity().getAssets(),"fonts/oredoo.ttf");
+
         insuranceTitle=(TextView)view.findViewById(R.id.insuranceTitle);
         insuranceSubTitle=(TextView)view.findViewById(R.id.insuranceSubTitle);
         insuranceInfo=(TextView)view.findViewById(R.id.insuranceInfo);
         insuranceInfo2=(TextView)view.findViewById(R.id.insuranceInfo2);
         insuranceInfo3=(TextView)view.findViewById(R.id.insuranceInfo3);
-
+        
+        insuranceInfo.setTypeface(type);
+        insuranceInfo2.setTypeface(type);
+        insuranceInfo3.setTypeface(type);
+        insuranceTitle.setTypeface(type);
         setContent();
+
 
 
       //  content=(TextView)view.findViewById((R.id.contentId));
@@ -62,6 +70,7 @@ public class InsuranceInformationFragment extends Fragment  {
      {   int  Position=Flags.Positionflag;
          switch(Position) {
              case 0:
+                 insuranceTitle.setText(R.string.CarTitle);
 
                  Toast.makeText(this.getActivity(),Position+"",Toast.LENGTH_SHORT).show();
               //   content.setText(R.string.our_messagetext);
@@ -72,25 +81,61 @@ public class InsuranceInformationFragment extends Fragment  {
                  insuranceInfo.setText(R.string.MarineInsurance);
                  insuranceInfo2.setText("");
                  insuranceInfo3.setText("");
-
                  insuranceTitle.setText(R.string.MarineInsuranceTitle);
-                 Toast.makeText(this.getActivity(),Position+"",Toast.LENGTH_SHORT).show();
+                // Toast.makeText(this.getActivity(),Position+"",Toast.LENGTH_SHORT).show();
                  // content.setText(R.string.about_international);
                  break;
              case 2:
-                 Toast.makeText(this.getActivity(),Position+"",Toast.LENGTH_SHORT).show();
+                 insuranceSubTitle.setText("");
+                 insuranceInfo.setText("");
+                 insuranceInfo2.setText("");
+                 insuranceInfo3.setText("");
+
+                 insuranceInfo.setText(R.string.EngInfo);
+                // Toast.makeText(this.getActivity(),Position+"",Toast.LENGTH_SHORT).show();
                  // content.setText(R.string.about_international);
                  break;
              case 3:
-                 Toast.makeText(this.getActivity(),Position+"",Toast.LENGTH_SHORT).show();
+                 insuranceSubTitle.setText("");
+                 insuranceInfo.setText("");
+                 insuranceInfo2.setText("");
+                 insuranceInfo3.setText("");
+                 insuranceTitle.setText(R.string.firetitle);
+
+                 insuranceInfo.setText(R.string.Firecontent);
+                 //Toast.makeText(this.getActivity(),Position+"",Toast.LENGTH_SHORT).show();
                  // content.setText(R.string.about_international);
                  break;
              case 4:
-                 Toast.makeText(this.getActivity(),Position+"",Toast.LENGTH_SHORT).show();
-                 // content.setText(R.string.about_international);
+                 insuranceSubTitle.setText("");
+                 insuranceInfo.setText("");
+                 insuranceInfo2.setText("");
+                 insuranceInfo3.setText("");
+                 insuranceTitle.setText(R.string.worktitle);
+
+                 insuranceInfo.setText(R.string.WorkContent);
+
                  break;
              case 5:
-                 Toast.makeText(this.getActivity(),Position+"",Toast.LENGTH_SHORT).show();
+                 insuranceSubTitle.setText("");
+                 insuranceInfo.setText("");
+                 insuranceInfo2.setText("");
+                 insuranceInfo3.setText("");
+                 insuranceTitle.setText(R.string.healthtitle);
+
+                 insuranceInfo.setText(R.string.HealthContent);
+
+                 break;
+             case 6:
+                 insuranceTitle.setText(R.string.personalttile);
+
+                 insuranceSubTitle.setText("");
+                 insuranceInfo.setText("");
+                 insuranceInfo2.setText("");
+                 insuranceInfo3.setText("");
+
+                 insuranceInfo.setText(R.string.personalcontent);
+                 // Toast.makeText(this.getActivity(),Position+"",Toast.LENGTH_SHORT).show();
                  // content.setText(R.string.about_international);
                  break;
          }
