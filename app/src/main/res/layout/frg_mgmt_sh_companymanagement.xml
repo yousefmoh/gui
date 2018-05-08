@@ -50,6 +50,7 @@
         android:text="@string/jamal"
         android:textSize="10sp"
         android:textColor="#ffff"
+        android:id="@+id/text1"
         android:layout_gravity="center"
         android:background="#9c0054"
         android:layout_height="50dp" />
@@ -73,6 +74,7 @@
                 android:text="@string/tahseen"
                 android:textSize="10sp"
                 android:textColor="#ffff"
+                android:id="@+id/text2"
                 android:layout_gravity="center"
                 android:background="#9c0054"
                 android:layout_height="50dp" />
@@ -103,6 +105,8 @@
                 android:textSize="10sp"
                 android:textColor="#ffff"
                 android:layout_gravity="center"
+                android:id="@+id/text3"
+
                 android:background="#9c0054"
                 android:layout_height="50dp" />
 
@@ -124,6 +128,8 @@
                 android:gravity="center"
                 android:text="@string/mahmoud"
                 android:textSize="10sp"
+                android:id="@+id/text4"
+
                 android:textColor="#ffff"
                 android:layout_gravity="center"
                 android:background="#9c0054"

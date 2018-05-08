@@ -43,12 +43,8 @@ public class EmergancyFragment extends Fragment  {
 
         view =inflater.inflate(R.layout.emergancy_fragment, container, false);
 
-
-
         content=(TextView)view.findViewById(R.id.contentId);
         title=(TextView)view.findViewById(R.id.title);
-
-
 
         Typeface type = Typeface.createFromAsset(getActivity().getAssets(),"fonts/oredoo.ttf");
         content.setTypeface(type);

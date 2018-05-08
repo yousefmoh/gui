@@ -1,6 +1,7 @@
 package com.example.dexter.designinsurance.Fragments;
 
 import android.app.Fragment;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dexter.designinsurance.R;
@@ -25,6 +27,7 @@ public class FragmentCompanyManagement extends Fragment {
     View view;
     Toolbar toolbar;
     ImageView directorimgId1,directorimgId2,directorimgId3,directorimgId4;
+    TextView test;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,13 +46,25 @@ public class FragmentCompanyManagement extends Fragment {
         Picasso.with(getActivity()).load("http://gui.ps/plugins/kcfinder/upload/albums/x1.jpg").into(directorimgId2);
         Picasso.with(getActivity()).load("http://gui.ps/plugins/kcfinder/upload/albums/x4.jpg").into(directorimgId3);
         Picasso.with(getActivity()).load("http://gui.ps/plugins/kcfinder/upload/albums/x3.jpg").into(directorimgId4);
-
+        SetText();
 
         InitToolbar();
 
         return view;
     }
 
+    private  void  SetText()
+    {
+        Typeface type = Typeface.createFromAsset(getActivity().getAssets(),"fonts/oredoo.ttf");
+
+
+        for (int i=1;i<4;i++) {
+            test = (TextView) view.findViewById(R.id.text + i);
+            test.setTypeface(type);
+        }
+
+
+    }
 
     public  void  InitToolbar()
     {

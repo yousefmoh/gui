@@ -2,6 +2,7 @@ package com.example.dexter.designinsurance.Fragments;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dexter.designinsurance.Adapters.InsurancePackageAdapter;
@@ -46,6 +48,7 @@ public class FragmentInsurancePackage extends Fragment {
     Context context;
     ArrayList<InsurancePackagesModel> data=new ArrayList<>();
     Toolbar toolbar;
+    TextView test;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -59,9 +62,14 @@ public class FragmentInsurancePackage extends Fragment {
 
         view =inflater.inflate(R.layout.fragment_insurancepackage, container, false);
 
+        test=(TextView)view.findViewById(R.id.test);
+        Typeface type = Typeface.createFromAsset(getActivity().getAssets(),"fonts/oredoo.ttf");
+        test.setTypeface(type);
+
         setHasOptionsMenu(true);
         InitToolbar();
         loadJSON();
+
       //  setRecycleView();
         return view;
     }
@@ -99,6 +107,7 @@ public class FragmentInsurancePackage extends Fragment {
         RecyclerView.LayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+
 
 
     }

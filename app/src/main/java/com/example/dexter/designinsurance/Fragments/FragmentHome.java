@@ -29,6 +29,7 @@ public class FragmentHome extends Fragment  implements View.OnClickListener {
     ImageView aboutus,album,insurancePackage,contact_us,emergancyNumbers,help,report,locations,insurancerequest;
     Fragment fragment;
     TextView testText;
+    TextView whoweare,text2,text3,text4,text5;
 
 
     @Override
@@ -44,9 +45,8 @@ public class FragmentHome extends Fragment  implements View.OnClickListener {
 
         view =inflater.inflate(R.layout.home_fragment, container, false);
         setItems();
-        testText=(TextView)view.findViewById(R.id.testText);
 
-
+        setTextItems();
         //Typeface type = Typeface.createFromAsset(getActivity().getAssets(),"fonts/test2.ttf");
         //testText.setTypeface(type);
 
@@ -75,6 +75,29 @@ public class FragmentHome extends Fragment  implements View.OnClickListener {
 
     }
 
+    public  void setTextItems()
+    {
+        Typeface type = Typeface.createFromAsset(getActivity().getAssets(),"fonts/oredoo.ttf");
+
+        testText=(TextView)view.findViewById(R.id.testText);
+        whoweare=(TextView)view.findViewById(R.id.whoweare);
+        text2=(TextView)view.findViewById(R.id.text2);
+        text3=(TextView)view.findViewById(R.id.text3);
+        text4=(TextView)view.findViewById(R.id.text4);
+        text5=(TextView)view.findViewById(R.id.text5);
+
+        testText.setTypeface(type);
+        whoweare.setTypeface(type);
+        text2.setTypeface(type);
+        text3.setTypeface(type);
+        text4.setTypeface(type);
+        text5.setTypeface(type);
+
+
+
+
+
+    }
 
     public void onClick(View v) {
         // Perform action on click

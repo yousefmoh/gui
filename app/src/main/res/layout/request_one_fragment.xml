@@ -23,6 +23,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:text="الاسم"
+            android:id="@+id/test1"
             android:layout_height="wrap_content" />
         <EditText
             android:layout_width="match_parent"
@@ -40,6 +41,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:text="رقم الهوية"
+                android:id="@+id/test2"
 
                 android:layout_height="wrap_content" />
             <EditText
@@ -59,6 +61,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:text="رقم الجوال"
+                android:id="@+id/test3"
+
                 android:layout_height="wrap_content" />
             <EditText
                 android:layout_width="match_parent"
@@ -77,6 +81,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:text="ألايميل "
+                android:id="@+id/test4"
                 android:layout_height="wrap_content" />
             <EditText
                 android:layout_width="match_parent"

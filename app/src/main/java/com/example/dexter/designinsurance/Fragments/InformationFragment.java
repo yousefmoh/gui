@@ -1,6 +1,7 @@
 package com.example.dexter.designinsurance.Fragments;
 
 import android.app.Fragment;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -39,8 +40,11 @@ public class InformationFragment extends Fragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
+        Typeface type = Typeface.createFromAsset(getActivity().getAssets(),"fonts/oredoo.ttf");
+
         view =inflater.inflate(R.layout.information_fragment, container, false);
         content=(TextView)view.findViewById((R.id.contentId));
+        content.setTypeface(type);
         InitToolbar();
         setContent();
         return view;

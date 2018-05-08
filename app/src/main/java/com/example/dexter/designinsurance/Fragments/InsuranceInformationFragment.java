@@ -49,7 +49,7 @@ public class InsuranceInformationFragment extends Fragment  {
         insuranceInfo=(TextView)view.findViewById(R.id.insuranceInfo);
         insuranceInfo2=(TextView)view.findViewById(R.id.insuranceInfo2);
         insuranceInfo3=(TextView)view.findViewById(R.id.insuranceInfo3);
-        
+
         insuranceInfo.setTypeface(type);
         insuranceInfo2.setTypeface(type);
         insuranceInfo3.setTypeface(type);

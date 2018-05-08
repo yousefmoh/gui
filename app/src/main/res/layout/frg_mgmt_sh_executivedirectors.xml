@@ -28,6 +28,7 @@
     tools:context="com.example.dexter.designinsurance.MainActivity">
     <TextView
         android:layout_width="wrap_content"
+        android:id="@+id/test"
         android:text="@string/managers"
         android:layout_height="wrap_content" />
 </LinearLayout>

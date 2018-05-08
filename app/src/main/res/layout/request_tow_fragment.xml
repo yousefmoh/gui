@@ -22,6 +22,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:text=" اسم الفرع"
+                android:id="@+id/test1"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:layout_height="match_parent" />
@@ -43,6 +44,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:text=" نوع التأمين"
+                android:id="@+id/test2"
+
                 android:gravity="center"
                 android:layout_height="match_parent" />
 
@@ -65,6 +68,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:text="طريقة الدفع "
+                android:id="@+id/test3"
                 android:gravity="center"
                 android:layout_height="match_parent" />
 

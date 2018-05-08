@@ -2,6 +2,7 @@ package com.example.dexter.designinsurance.Fragments;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -49,7 +50,7 @@ public class RequestOneFragment extends Fragment  {
     TextView content;
     EditText name,numb,Id,email;
     Button nextIdBtn;
-    TextView oneText;
+    TextView test;
 
 
 
@@ -72,7 +73,7 @@ public class RequestOneFragment extends Fragment  {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-
+        SetText();
         nextIdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -111,6 +112,20 @@ public class RequestOneFragment extends Fragment  {
         InitToolbar();
         return view;
     }
+
+    private  void  SetText()
+    {
+        Typeface type = Typeface.createFromAsset(getActivity().getAssets(),"fonts/oredoo.ttf");
+
+
+        for (int i=1;i<4;i++) {
+            test = (TextView) view.findViewById(R.id.test + i);
+            test.setTypeface(type);
+        }
+
+
+    }
+
     private void  PassData()
     {
         Bundle bundle=new Bundle();

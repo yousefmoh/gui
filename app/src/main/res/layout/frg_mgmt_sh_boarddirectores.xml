@@ -36,10 +36,13 @@
         android:layout_width="0dp"
         android:text="السيد جمال نايف براهمة"
         android:layout_weight="1"
+        android:id="@+id/testText1"
         android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/testText2"
+
             android:text="رئيس مجلس الادارة و الرئيس التنفيذي"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -53,10 +56,13 @@
             android:layout_width="0dp"
             android:text="السيد نبيل جوزف قطران"
             android:layout_weight="1"
+            android:id="@+id/testText3"
+
             android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/testText4"
             android:text="نائب رئيس مجلس الإدارة"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -70,10 +76,13 @@
             android:layout_width="0dp"
             android:text="السيد سعيد خليل صيام"
             android:layout_weight="1"
+            android:id="@+id/testText5"
             android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/testText6"
+
             android:text="عضو مجلس إدارة"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -86,10 +95,13 @@
             android:layout_width="0dp"
             android:text="السيد روبرت جنفزيان"
             android:layout_weight="1"
+            android:id="@+id/testText7"
+
             android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/testText8"
             android:text="عضو مجلس إدارة"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -103,10 +115,12 @@
             android:layout_width="0dp"
             android:text="السيد تحسين نايف براهمة"
             android:layout_weight="1"
+            android:id="@+id/testText9"
             android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/testText10"
             android:text="عضو مجلس إدارة"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -119,10 +133,12 @@
             android:layout_width="0dp"
             android:text="السيد لؤي شفيق خوري"
             android:layout_weight="1"
+            android:id="@+id/testText11"
             android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/testText12"
             android:text="عضو مجلس إدارة"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -136,10 +152,12 @@
             android:layout_width="0dp"
             android:text="السيد جان رفائيل صليب"
             android:layout_weight="1"
+            android:id="@+id/testText13"
             android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/testText14"
             android:text="عضو مجلس إدارة"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -150,12 +168,14 @@
         android:layout_height="wrap_content">
         <TextView
             android:layout_width="0dp"
+            android:id="@+id/testText15"
             android:text="الدكتور سميح حسين العبد"
             android:layout_weight="1"
             android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/testText16"
             android:text="عضو مجلس إدارة"
             android:layout_height="wrap_content" />
     </LinearLayout>

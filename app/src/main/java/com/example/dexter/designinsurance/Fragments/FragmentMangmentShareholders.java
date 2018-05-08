@@ -2,6 +2,7 @@ package com.example.dexter.designinsurance.Fragments;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -52,6 +53,7 @@ public class FragmentMangmentShareholders extends Fragment implements  View.OnCl
     public  void  SetItems()
     {
 
+        Typeface type = Typeface.createFromAsset(getActivity().getAssets(),"fonts/oredoo.ttf");
 
         CompanyManagementId=(Button) view.findViewById(R.id.CompanyManagementId);
         BoardofDirectorsId=(Button) view.findViewById(R.id.BoardofDirectorsId);
@@ -62,6 +64,15 @@ public class FragmentMangmentShareholders extends Fragment implements  View.OnCl
         BoardofDirectorsId.setOnClickListener(this);
         ExecutiveManagementId.setOnClickListener(this);
         SeniorshareholdersId.setOnClickListener(this);
+
+
+
+        CompanyManagementId.setTypeface(type);
+        CompanyManagementId.setTypeface(type);
+        CompanyManagementId.setTypeface(type);
+        CompanyManagementId.setTypeface(type);
+
+
     }
 
 

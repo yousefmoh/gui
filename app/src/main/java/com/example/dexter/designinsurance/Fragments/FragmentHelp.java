@@ -3,6 +3,7 @@ package com.example.dexter.designinsurance.Fragments;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -51,6 +52,8 @@ public class FragmentHelp extends Fragment  implements View.OnClickListener{
     public  void  SetItems()
     {
 
+        Typeface type = Typeface.createFromAsset(getActivity().getAssets(),"fonts/oredoo.ttf");
+
 
         helpVideobtn=(Button) view.findViewById(R.id.helpVideoId);
         commonQuestionBtn=(Button) view.findViewById(R.id.commonQuestionId);
@@ -58,7 +61,14 @@ public class FragmentHelp extends Fragment  implements View.OnClickListener{
         helpVideobtn.setOnClickListener(this);
         commonQuestionBtn.setOnClickListener(this);
         cancelInsuranceBtn.setOnClickListener(this);
+
+        helpVideobtn.setTypeface(type);
+        cancelInsuranceBtn.setTypeface(type);
+        commonQuestionBtn.setTypeface(type);
+
     }
+
+
 
    /* public void onClick(View v) {
         // Perform action on click

@@ -2,6 +2,7 @@ package com.example.dexter.designinsurance.Fragments;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dexter.designinsurance.R;
@@ -27,7 +29,8 @@ public class FragmentAboutUs extends Fragment  implements View.OnClickListener{
     Fragment fragment;
     Toolbar toolbar;
     Button OurMessageBtn,OurVisionBtn,AboutUsBtn,ShareHoldersBtn;
-
+    TextView title;
+    Typeface type;
 
 
     @Override
@@ -41,6 +44,10 @@ public class FragmentAboutUs extends Fragment  implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
         view =inflater.inflate(R.layout.about_us_fragment, container, false);
+        type  = Typeface.createFromAsset(getActivity().getAssets(),"fonts/oredoo.ttf");
+        title=(TextView)view.findViewById(R.id.title);
+        title.setTypeface(type);
+
         fragment=new InformationFragment();
 
         InitToolbar();
@@ -55,10 +62,19 @@ public class FragmentAboutUs extends Fragment  implements View.OnClickListener{
         OurVisionBtn=(Button) view.findViewById(R.id.ourvisionId);
         AboutUsBtn=(Button) view.findViewById(R.id.aboutourcompanyId);
         ShareHoldersBtn=(Button) view.findViewById(R.id.ourshareholdersId);
+
         OurMessageBtn.setOnClickListener(this);
         OurVisionBtn.setOnClickListener(this);
         ShareHoldersBtn.setOnClickListener(this);
         AboutUsBtn.setOnClickListener(this);
+
+
+        OurMessageBtn.setTypeface(type);
+        OurVisionBtn.setTypeface(type);
+        AboutUsBtn.setTypeface(type);
+        ShareHoldersBtn.setTypeface(type);
+
+
     }
 
    /* public void onClick(View v) {

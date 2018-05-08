@@ -2,6 +2,7 @@ package com.example.dexter.designinsurance.Fragments;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -37,6 +38,7 @@ public class RequestTowFragment extends Fragment implements AdapterView.OnItemSe
     TextView titlebar;
     TextView content,accountNumberText;
     Button nextIdBtn;
+    TextView testt;
 
     int test=0;
     String Name,ID,MobileNumber,email;
@@ -93,11 +95,25 @@ public class RequestTowFragment extends Fragment implements AdapterView.OnItemSe
         SetSpinnersContent();
         accountNumber.setVisibility(View.GONE);
 
-
+        SetText();
 
 
 
         return view;
+    }
+
+
+    private  void  SetText()
+    {
+        Typeface type = Typeface.createFromAsset(getActivity().getAssets(),"fonts/oredoo.ttf");
+
+
+        for (int i=1;i<3;i++) {
+            testt = (TextView) view.findViewById(R.id.test + i);
+            testt.setTypeface(type);
+        }
+
+
     }
     private  void  SetSpinnersContent()
     {
