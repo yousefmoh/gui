@@ -1,6 +1,7 @@
 package com.example.dexter.designinsurance.Fragments;
 
 import android.app.Fragment;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dexter.designinsurance.R;
@@ -22,6 +24,7 @@ import com.example.dexter.designinsurance.R;
 public class FragmentSeniorShareholders extends Fragment {
     View view;
     Toolbar toolbar;
+    TextView test1;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,9 +38,23 @@ public class FragmentSeniorShareholders extends Fragment {
           view =inflater.inflate(R.layout.frg_senior_shareholders, container, false);
         InitToolbar();
 
+        SetText();
         return view;
     }
 
+
+    private  void  SetText()
+    {
+        Typeface type = Typeface.createFromAsset(getActivity().getAssets(),"fonts/oredoo.ttf");
+
+
+        for (int i=1;i<=24;i++) {
+            test1 = (TextView) view.findViewById(R.id.test + i);
+            test1.setTypeface(type);
+        }
+
+
+    }
 
     public  void  InitToolbar()
     {

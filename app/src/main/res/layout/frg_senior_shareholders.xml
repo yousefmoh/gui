@@ -36,10 +36,12 @@
         android:layout_width="0dp"
         android:text="السيد جمال نايف براهمة"
         android:layout_weight="1"
+        android:id="@+id/test1"
         android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/test2"
             android:text="عدد الأسهم 722.139 بنسبة %13.13"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -47,16 +49,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
+
         android:layout_marginTop="5dp"
         android:layout_height="wrap_content">
         <TextView
             android:layout_width="0dp"
             android:text="السيد سعيد خليل صيام"
             android:layout_weight="1"
+            android:id="@+id/test3"
             android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/test4"
+
             android:text="عدد الأسهم 500.000 بنسبة %10.00"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -69,10 +75,14 @@
         android:layout_width="0dp"
         android:text="السيدة بشرى فايز براهمه"
         android:layout_weight="1"
+        android:id="@+id/test5"
+
         android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/test6"
+
             android:text="عدد الأسهم 550.000 بنسبة %10.00"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -86,10 +96,14 @@
             android:layout_width="0dp"
             android:text="السيد نبيل جوزف قطران"
             android:layout_weight="1"
+            android:id="@+id/test7"
+
             android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/test8"
+
             android:text="عدد الأسهم 412.500 بنسبة %7.50"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -102,10 +116,13 @@
         android:layout_width="0dp"
         android:text="السيد لؤي شفيق خوري"
         android:layout_weight="1"
+        android:id="@+id/test9"
         android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/test10"
+
             android:text="عدد الأسهم 412.500 بنسبة %7.50"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -119,9 +136,11 @@
             android:layout_width="0dp"
             android:text="السيد تحسين نايف براهمه"
             android:layout_weight="1"
+            android:id="@+id/test11"
             android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
+            android:id="@+id/test12"
             android:layout_weight="1"
             android:text="عدد الأسهم 412.500 بنسبة %7.50"
             android:layout_height="wrap_content" />
@@ -135,10 +154,12 @@
         android:layout_width="0dp"
         android:text="شركة انوفيست للخدمات التجارية"
         android:layout_weight="1"
+        android:id="@+id/test13"
         android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/test14"
             android:text="عدد الأسهم 385.000 بنسبة %7.00"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -152,10 +173,12 @@
             android:layout_width="0dp"
             android:text="السيد امجد عدنان بسيسو"
             android:layout_weight="1"
+            android:id="@+id/test15"
             android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/test16"
             android:text="عدد الأسهم 220.000 بنسبة %4.00"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -169,10 +192,12 @@
         android:layout_width="0dp"
         android:text="شركة املاك للاستثمار العقاري والتجارة"
         android:layout_weight="1"
+        android:id="@+id/test17"
         android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/test18"
             android:text="عدد الأسهم 110.000 بنسبة %2.00"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -186,13 +211,19 @@
             android:layout_width="0dp"
             android:text="   السيد نبيل محمد عباسي"
             android:layout_weight="1"
+            android:id="@+id/test19"
+
             android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/test20"
+
             android:text="عدد الأسهم 110.000 بنسبة %2.00"
             android:layout_height="wrap_content" />
-    </LinearLayout>  <LinearLayout
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:background="#f4e4ed"
@@ -201,10 +232,14 @@
         android:layout_width="0dp"
         android:text=" السيد جان رفائيل صليب"
         android:layout_weight="1"
+        android:id="@+id/test21"
+
         android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/test22"
+
             android:text="عدد الأسهم 110.000 بنسبة %2.00"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -216,11 +251,13 @@
         android:layout_height="wrap_content">
         <TextView
             android:layout_width="0dp"
+            android:id="@+id/test23"
             android:text="  السيدة دينا عدنان بسيسو"
             android:layout_weight="1"
             android:layout_height="wrap_content" />
         <TextView
             android:layout_width="0dp"
+            android:id="@+id/test24"
             android:layout_weight="1"
             android:text="عدد الأسهم 110.000 بنسبة %2.00"
             android:layout_height="wrap_content" />
