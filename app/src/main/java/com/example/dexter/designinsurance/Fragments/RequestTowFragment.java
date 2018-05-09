@@ -108,10 +108,14 @@ public class RequestTowFragment extends Fragment implements AdapterView.OnItemSe
         Typeface type = Typeface.createFromAsset(getActivity().getAssets(),"fonts/oredoo.ttf");
 
 
-        for (int i=1;i<3;i++) {
-            testt = (TextView) view.findViewById(R.id.test + i);
+
+            testt = (TextView) view.findViewById(R.id.test1);
             testt.setTypeface(type);
-        }
+            testt = (TextView) view.findViewById(R.id.test2);
+            testt.setTypeface(type);
+            testt = (TextView) view.findViewById(R.id.test3);
+            testt.setTypeface(type);
+
 
 
     }

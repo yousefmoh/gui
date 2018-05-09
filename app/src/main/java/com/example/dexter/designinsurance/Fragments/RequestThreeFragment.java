@@ -203,7 +203,7 @@ public class RequestThreeFragment extends Fragment  {
           @Override
           public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
               ResponseModel responsem=response.body();
-              Toast.makeText(getActivity(), responsem.getMessage()+"",Toast.LENGTH_SHORT).show();
+             // Toast.makeText(getActivity(), responsem.getMessage()+"",Toast.LENGTH_SHORT).show();
                 String result = "http://snap-project.com/insuranceapis/uploads/" + Fname + "." + extension;
               userIdPath=result;
 
@@ -258,7 +258,7 @@ return  "";
             @Override
             public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
                 ResponseModel responsem=response.body();
-                Toast.makeText(getActivity(), responsem.getMessage()+"",Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getActivity(), responsem.getMessage()+"",Toast.LENGTH_SHORT).show();
                 String result = "http://snap-project.com/insuranceapis/uploads/" + Fname + "." + extension;
                 userDriveLPath=result;
 
@@ -312,7 +312,7 @@ return  "";
             @Override
             public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
                 ResponseModel responsem=response.body();
-                Toast.makeText(getActivity(), responsem.getMessage()+"",Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getActivity(), responsem.getMessage()+"",Toast.LENGTH_SHORT).show();
                 String result = "http://snap-project.com/insuranceapis/uploads/" + Fname + "." + extension;
                 carlicencePath=result;
                 /*  if (Pflag==0){
@@ -355,7 +355,7 @@ return  "";
 
     private  void   insertUser()
     {
-        Toast.makeText(getActivity(),userIdPath+userDriveLPath,Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getActivity(),userIdPath+userDriveLPath,Toast.LENGTH_SHORT).show();
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -372,7 +372,7 @@ return  "";
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
 
-                  Toast.makeText(getActivity(),"Success",Toast.LENGTH_SHORT).show();
+                 // Toast.makeText(getActivity(),"Success",Toast.LENGTH_SHORT).show();
 
                    Toast.makeText(getActivity(),response.body(),Toast.LENGTH_SHORT).show();
 

@@ -29,7 +29,7 @@ public class FragmentHome extends Fragment  implements View.OnClickListener {
     ImageView aboutus,album,insurancePackage,contact_us,emergancyNumbers,help,report,locations,insurancerequest;
     Fragment fragment;
     TextView testText;
-    TextView whoweare,text2,text3,text4,text5;
+    TextView whoweare,text2,text3,text4,text5,text6;
 
 
     @Override
@@ -85,6 +85,7 @@ public class FragmentHome extends Fragment  implements View.OnClickListener {
         text3=(TextView)view.findViewById(R.id.text3);
         text4=(TextView)view.findViewById(R.id.text4);
         text5=(TextView)view.findViewById(R.id.text5);
+        text6=(TextView)view.findViewById(R.id.text6);
 
         testText.setTypeface(type);
         whoweare.setTypeface(type);
@@ -92,6 +93,8 @@ public class FragmentHome extends Fragment  implements View.OnClickListener {
         text3.setTypeface(type);
         text4.setTypeface(type);
         text5.setTypeface(type);
+        text6.setTypeface(type);
+
 
 
 

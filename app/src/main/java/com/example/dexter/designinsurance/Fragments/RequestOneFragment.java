@@ -118,10 +118,21 @@ public class RequestOneFragment extends Fragment  {
         Typeface type = Typeface.createFromAsset(getActivity().getAssets(),"fonts/oredoo.ttf");
 
 
-        for (int i=1;i<4;i++) {
-            test = (TextView) view.findViewById(R.id.test + i);
-            test.setTypeface(type);
-        }
+
+        test = (TextView) view.findViewById(R.id.test1);
+        test.setTypeface(type);
+        test = (TextView) view.findViewById(R.id.test2);
+        test.setTypeface(type);
+
+        test = (TextView) view.findViewById(R.id.test3);
+        test.setTypeface(type);
+
+        test = (TextView) view.findViewById(R.id.test4);
+        test.setTypeface(type);
+
+
+
+
 
 
     }
