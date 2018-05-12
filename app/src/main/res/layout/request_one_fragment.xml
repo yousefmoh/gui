@@ -28,6 +28,8 @@
         <EditText
             android:layout_width="match_parent"
             android:id="@+id/nameEditId"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rounded_border_edittext"
             android:layout_height="wrap_content" />
 
 </LinearLayout>
@@ -47,6 +49,8 @@
             <EditText
                 android:layout_width="match_parent"
                 android:inputType="phone"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rounded_border_edittext"
                 android:id="@+id/internationlIdEdit"
                 android:layout_height="wrap_content" />
 
@@ -63,10 +67,13 @@
                 android:text="رقم الجوال"
                 android:id="@+id/test3"
 
+
                 android:layout_height="wrap_content" />
             <EditText
                 android:layout_width="match_parent"
                 android:id="@+id/mobileNumberEdit"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rounded_border_edittext"
                 android:inputType="phone"
                 android:layout_height="wrap_content" />
 
@@ -86,6 +93,8 @@
             <EditText
                 android:layout_width="match_parent"
                 android:id="@+id/email"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rounded_border_edittext"
                 android:inputType="textEmailAddress"
                 android:layout_height="wrap_content" />
 
